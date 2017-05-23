@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.0/jquery.min.js"></script>
+	<style>
+	.btn_calc{
+	  display: block;
+  -moz-border-radius: 6px;
+  -webkit-border-radius: 6px;
+  border-radius: 6px;
+  -webkit-box-shadow: inset 0px 0px 15px 5px #EAEAEA;
+  box-shadow: inset 0px 0px 15px 5px #EAEAEA;
+  background-color: #f8f8f8;
+  border: 1px solid #dedede;
+  padding: 10px;
+  text-align: center;
+  text-decoration: none;
+  width: 40px;
+  float: left;
+  margin-left: 5px;
+  margin-bottom: 12px;
+  color: #a7a9ac;
+	}
+	
+	.buttons{
+  width: 145px;
+  height: 155px;
+	}
+	</style>
+	
+    <script>
+        $(document).ready(function(){
+
+            $('#schet').click(function(){
+
+                var mass = $('#mass').val();
+                var rost  = $('#rost').val();
+
+
+                if(mass!=''&& rost!='') {
+
+                    var pre = rost / 100;
+
+                    var qurd = Math.pow(pre, 2);
+                    var result = mass / qurd;
+                    var key = result -(result %1);
+
+
+                    if(key >= 18.5 && key<=25){
+
+                        alert('ИМТ= '+key+' Нормас кушай дальше =)');
+
+                    }
+
+
+
+                    if(key >= 25 && key<=30){
+
+                        alert('ИМТ= '+key+'Не мешало бы схуднуть с децл');
+
+                    }
+
+
+
+                    if(key >30){
+
+                        alert('ИМТ= '+key+' Фу ты жирный иди бегай ');
+
+                    }
+
+
+                    if(key <18.5){
+
+                        alert('ИМТ= '+key+' ТЫ ДРЫЩЬ ');
+
+                    }
+
+                    //  alert(key);
+
+
+
+
+
+
+                }else{
+                    alert('введите значение');
+                }
+
+            });
+
+            $('.calc').click(function(){
+            var b = $(this).attr('id');
+            $('.buttons').html('<button class="btn_calc" value="1">1</button><button class="btn_calc" value="2">2</button><button class="btn_calc" value="3">3</button><br/><button class="btn_calc" value="4">4</button><button class="btn_calc" value="5">5</button><button class="btn_calc" value="6">6</button><br/><button class="btn_calc" value="7">7</button><button class="btn_calc" value="8">8</button><button class="btn_calc" value="9">9</button><br><button class="btn_calc" value="0">0</button>');
+				
+				 eng(b);
+				
+            });
+                   function eng(b){
+				   
+                    $('.btn_calc').click(function(){
+					c = '#'+b;
+					
+					var upp = $(c).val();
+					
+					if(upp!=''){
+					
+					   var a =  $(this).attr('value');
+                        $(c).val(upp+a);
+					}else{
+					 var a =  $(this).attr('value');
+                        $(c).val(a);
+					
+					}
+					
+					
+                     
+				
+                    });
+
+                }
+
+            });
+    </script>
+</head>
+<body>
+
+<input id="mass" class="calc"  type="text" placeholder="вес" ><br>
+
+<input id="rost" class="calc" type="text" placeholder="рост" >
+
+<div class="buttons"></div>
+<button id="schet">Расчитать</button>
+
+
+<div id="result"></div>
+</body>
+</html>

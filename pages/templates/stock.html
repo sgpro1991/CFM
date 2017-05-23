@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<main class="page-content vc_responsive">
+	<div class="grid-row" style="">
+		<section>
+<br>
+
+    {% for a in news %}
+        <div class="col-xs-12 col-sm-12 col-md-4">
+        <a href="/stock/{{a.id}}/">
+					  <div class="item news" style="">
+							{% if a.image %}
+					   	<img src="/media/{{a.image}}" />
+							{% endif %}
+							  <h3 style="font-size:20px;color:#444;">{{a.title}}</h3>
+							  <div class="date">{{a.date|date:"j F Y"}}<span></span></div>
+
+                <div class="addnews">
+    				      <p class="summary"></p>
+    						</div>
+
+						    <!--<p style="padding: 10px;color: #555;">{{a.description}}</p>-->
+          </div>
+        </a>
+      </div>
+    {% endfor %}
+
+
+  </section>
+</div>
+</main>
+
+
+{% endblock %}

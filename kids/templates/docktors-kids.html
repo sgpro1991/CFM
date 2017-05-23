@@ -1,0 +1,131 @@
+{% extends 'base-kids.html' %}
+{% block content %}
+
+
+<!-- Lightbox -->
+
+<script src="/static/js/lightbox.min.js"></script>
+<link href="/static/css/lightbox.css" rel="stylesheet" />
+<!-- /Lightbox -->
+
+
+<script type="text/javascript" src="/static/js/lazyload.js"></script>
+<script>
+$(function() {
+        $(".lazy").lazyload({
+            threshold : 100,
+            effect : "fadeIn"
+      });
+})
+</script>
+
+
+<style>
+
+.lazy {
+  //  display: none;
+}
+
+.doctors .grid {
+    margin: 0;
+}
+.news{
+	height: auto !important;
+	text-align:left !important;
+}
+.news:hover{
+opacity:1;
+cursor:default;
+}
+.news img{
+width:100%;
+}
+</style>
+
+
+<!--<section class="page-title">
+  <div class="grid-row clearfix">
+    <h1>Наши специалисты</h1>
+              <nav class="bread-crumbs">
+      <a href="/">Главное</a>&nbsp;&nbsp;<i class="fa fa-angle-right"></i>&nbsp;
+      <a href="#">Наши специалисты</a>
+    </nav>
+  </div>
+</section>-->
+<br>
+<main class="page-content">
+  <div class="grid-row" id="gallery">
+
+		<section id="doctors" class="doctors">
+			<div class="widget-title">Наши сотрудники</div>
+      {% comment %} Фильтр по городам {% endcomment %}
+      <!--
+  		<select class="filter">
+  					<option value=".item">Все специалисты</option>
+          {% for a in city %}
+            <option value=".item{{a.id}}">{{a.city}}</option>
+          {% endfor %}
+  		</select>-->
+
+
+{% comment %} Вывод плитки c докторами {% endcomment %}
+  <div class="grid">
+  {% for a in doc %}
+          <div class="item item{{a.city}}">
+            <div class="pic">
+                <img class="lazy" data-original="/media/{{a.image1}}" src="/media/{{a.image1}}" alt="Doctor 1">
+              <div class="links">
+
+
+                <ul>
+                  {% if a.email %}
+                    <li><a href="/send_email/?docemail={{a.email}}" class="fa fa-envelope"></a></li>
+                  {% endif %}
+                  <li><a href="#{{a.id}}" class="fa fa-info"></a></li>
+                </ul>
+              </div>
+            </div>
+            <!--<h3>Портнов Игорь Григорьевич</h3>-->
+            <h3>{{a.name}}</h3>
+            <p style="font-size:12px;font-weight:bold;letter-spacing:0.5px;">{{a.work}}</p>
+          </div>
+  {% endfor %}
+  </div>
+</main>
+
+
+<div class="grid-row">
+{% comment %} Вывод Информации по докторам {% endcomment %}
+{% for a in doc %}
+  <section class="widget news news-{{a.id}}">
+    <div class="grid">
+        <div class="item" style="width:100%">
+        <a class="anchor" id="{{a.id}}"  name="{{a.id}}"></a>
+        <h3 class="widget-title">
+          <a href="#">{{a.name}}</a>
+        </h3>
+
+          <div class="date">{{a.work}}</div>
+          <div class="wrapper-1">
+            <div class="pic-1">
+
+                <ul style="max-width:270px;">
+                    <li><a href="/media/{{a.image3}}" data-lightbox="doctor-{{a.id}}"><img class="doc_img lazy" data-original="/media/{{a.image2}}" style="max-width:270px;float:left;margin:10px 25px 0 0;" src="/media/{{a.image2}}" alt="Quisque venenatis mi"></a></li>
+                    {% if a.image4 %}
+                      <a style="display:none" href="/media/{{a.image4}}" data-lightbox="doctor-{{a.id}}"></a>
+                    {% endif %}
+                </ul>
+
+            </div>
+          </div>
+
+        {{a.text|safe}}
+
+        </div>
+      </div>
+  </section>
+  {% endfor %}
+</div>
+
+
+{% endblock %}

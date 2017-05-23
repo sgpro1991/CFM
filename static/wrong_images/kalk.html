@@ -1,0 +1,197 @@
+<html>
+
+<head>
+<meta charset="utf8">
+<link rel="stylesheet" type="text/css" href="/css-kids/styles.css">
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+
+start2 = 0;
+start3 = 0;
+start4 = 0;
+start5 = 0;
+start6 = 0;
+
+var height = 1000;
+
+var timerId,timerId2,timerId3,timerId4,timerId5 = null;
+
+
+function add_counter_1(){
+
+if(start2 ==176 ){
+clearTimeout(timerId);
+
+}else{
+
+start2 += 1;
+
+$('#counter_1').html(start2);
+
+}
+
+}
+
+
+function add_counter_2(){
+
+if(start3==10000){
+clearTimeout(timerId2);
+}else{
+
+start3 += 100;
+
+$('#counter_2').html(start3);
+}
+}
+
+function add_counter_3(){
+
+if(start4==12000){
+clearTimeout(timerId3);
+}else{
+
+start4 += 120;
+
+$('#counter_3').html(start4);
+}
+}
+
+function add_counter_4(){
+
+if(start5==4){
+clearTimeout(timerId4);
+}else{
+
+start5 += 1;
+
+$('#counter_4').html(start5);
+}
+}
+
+function add_counter_5(){
+
+if(start6 == 130 ){
+clearTimeout(timerId5);
+
+}else{
+
+start6 += 1;
+
+$('#counter_5').html(start6);
+}
+}
+
+
+function INIT_COUNT(a){
+
+//if(timerId!==null) return;
+
+ timerId = setInterval(function(){
+
+ if(a>height){
+ add_counter_1()
+ }
+ },5) ;
+
+ timerId2 = setInterval(function(){
+ if(a>height){
+ add_counter_2()
+}
+ },10) ;
+
+
+ timerId3 = setInterval(function(){
+ if(a>height){
+ add_counter_3()
+}
+ }, 10) ;
+
+
+  timerId4 = setInterval(function(){
+ if(a>height){
+  add_counter_4()
+}
+  },250) ;
+
+ timerId5 = setInterval(function(){
+  if(a>height){
+ add_counter_5()
+}
+ },5) ;
+
+
+
+}
+
+
+
+
+
+
+$(window).scroll(function(){
+var a = $(this).scrollTop();
+
+if(a > 500){
+console.log(a);
+INIT_COUNT(a);
+}
+});
+
+
+});
+
+</script>
+<style>
+.container{
+height:2000px;
+}
+.counter{
+font-family:Arial;
+font-size:46px !important;
+}
+.box_kalk{
+    float: left;
+    width: 15%;
+    text-align: center;
+    min-width: 215px;
+    margin: 15px;
+}
+.count_text{
+font-size: 12px;
+
+}
+</style>
+</head>
+<body>
+
+<div class="counter_box">
+<div class="box_kalk">
+<span class="counter" id="counter_1">0</span><br>
+<span class="count_text">Количество месяцев работы</span>
+</div>
+<div class="box_kalk">
+
+<span class="counter" id="counter_2">0</span><br>
+<span class="count_text">Количество попыток ВРТ: ЭКО, ИИ, донорские программы</span>
+</div>
+
+<div class="box_kalk">
+
+<span class="counter" id="counter_3">0</span><br>
+<span class="count_text">Количество детей, рожденных после ВРТ</span>
+</div>
+
+<div class="box_kalk">
+<span class="counter" id="counter_4">0</span><br>
+<span class="count_text">Количество филиалов клиники</span>
+</div>
+<div class="box_kalk">
+<span class="counter" id="counter_5">0</span><br>
+<span class="count_text">Количество квалифицированных специалистов клиники</span>
+</div>
+</div>
+
+</body>
+</html>

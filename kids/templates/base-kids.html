@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html>
+	<head>
+
+		<!-- metas -->
+		<title>ЦCM - Детское отделение {{ flatpage.title_seo }}</title>
+		<!--<base href="/" />-->
+				<!-- metas -->
+		<meta charset="utf-8">
+    <meta name='yandex-verification' content= '71d7cf7c07cbc8f8' />
+		{% if flatpage.keywords_seo %}
+    <meta name="keywords" content="{{flatpage.keywords_seo}}">
+		{% else %}
+    <meta name="keywords" content="">
+		{% endif %}
+		{% if flatpage.description_seo %}
+		<meta name="description" content="{{flatpage.description_seo}}">
+		{% else %}
+		<meta name="description" content="">
+    {% endif %}
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+		<!--/ metas -->
+		<link rel="icon" href="/static/favicon.ico" type="image/x-icon">
+		<!-- styles -->
+		<link rel="stylesheet" type="text/css" href="/static/css-kids/layerslider.css">
+		<link rel="stylesheet" type="text/css" href="/static/css-kids/fullwidth/skin.css">
+		<link rel="stylesheet" type="text/css" href="/static/css-kids/font-awesome.css">
+		<link rel="stylesheet" type="text/css" href="/static/css-kids/owl.carousel.css">
+		<link rel="stylesheet" type="text/css" href="/static/css-kids/jquery.fancybox.css">
+		<link rel="stylesheet" type="text/css" href="/static/css/styles.css">
+		<link rel="stylesheet" type="text/css" href="/static/css-kids/color-yellow.css">
+		<link rel="stylesheet" type="text/css" href="/static/css/pikaday.css">
+
+
+		<!--/ styles -->
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.3/jquery.min.js"></script>
+        <!--/ Calander code -->
+		<!--[if lt IE 9]><script src="static/js/html5.js"></script><![endif]-->
+	</head>
+
+	<body>
+
+	<div class="page">
+
+    <div class="branch-selector">
+
+      <!--<ul>-->
+        <!--<li class="left">
+          <a href="index.php" class="active"><i class="fa fa-building-o"></i>Отделения></a>
+          <ul>
+            <li><a href="#">ЭКО</a></li>
+            <li><a href="#">педиатрия</a></li>
+                          <li><a href="#">предгравидарной подготовки</a></li>
+                          <li><a href="#">хирургическое</a></li>
+          </ul>
+        </li>
+        <div class="current-branch">
+          <li>ЭКО</li>
+        </div>
+
+                  <div class="lang-select">
+          <a id="inactive" href="./comingsoon.php"><img id="flags" src="/img/eng.gif" height="12px" width="18px"></a>
+          <a href="#"><img id="flags" src="/img/rus.gif" height="12px" width="18px"></a>
+        </div>-->
+
+        <div class="site-switcher">
+          <a href="/"><img src="/static/img/logo-bw.png" width="40px"> &nbsp Центр семейной медицины</a>
+        </div>
+
+        <div class="soc-icon-main">
+
+            <div class="show_form_online" style="position: absolute;right: 30%;"><img width="45" src="http://www.lidergas.ru/image/data/phone.png"></div>
+
+                     <a href="tel:(343) 237-5-999"><div class="branch-selector-text callibri_phone">(343) 237-5-999</div></a>
+          <a id="social-media-logos" href="#"><img src="/static/img/odn.png" height="30px" width="30px"></a>
+          <a id="social-media-logos" href="#"><img src="/static/img/vk.png" height="30px" width="30px"></a>
+          <a id="social-media-logos" href="#"><img src="/static/img/face.png" height="30px" width="30px"></a>
+                  </div>
+
+  <div class="tel_form">
+
+  <div class="close_form_tel"></div>
+
+  <form action="/form/communication/" method="POST" name="contactform">
+                            {% csrf_token %}
+              <fieldset>
+              <div class="row">
+                <input type="text" name="nameOnline" placeholder="имя">
+                <i class="fa fa-user"></i>
+              </div>
+              <div class="row">
+                <input type="tel" name="phoneOnline" placeholder="телефонный номер">
+                <i class="fa fa-phone"></i>
+              </div>
+              <div class="row">
+                <input type="email" name="emailOnline" placeholder="электронная почта">
+                <i class="fa fa-envelope"></i>
+              </div>
+              <div class="row">
+                <input type="text" name="dateOnline" placeholder="Дата назначение" id="datepicker">
+                <i class="fa fa-calendar"></i>
+              </div>
+              <div class="row">
+                <textarea cols="30" rows="5" name="messageOnline" placeholder="Сообщение"></textarea>
+                <i class="fa fa-align-left"></i>
+              </div>
+
+              <button type="submit" name="submit" class="button" value="Submit">Отправить</button>
+
+            </fieldset>
+        </form>
+
+  </div>
+
+        <!-- site search
+        <div class="search-bar">
+
+          <form action="#" class="widget widget-site-search">
+            <input type="text" placeholder="поиск">
+            <button type="submit" class="button">GO</button>
+          </form>
+
+        </div>
+                          site search -->
+      <!--</ul>-->
+
+    </div>
+
+
+    <!-- page header -->
+    <header class="page-header main-page">
+    <div class="page-wrapper">
+      <!-- logo -->
+      <section class="logo-bg">
+      </section>
+        <section id="logo" class="logo">
+          <div>
+            <a href="../ru-pediatrics/index.php"><img src="/static/img/logotext.png" width="250" height="109" alt="UCM"></a>
+          </div>
+        </section>
+        <section id="logo2" class="logo2">
+          <div>
+            <a href="/kids/"><img src="/static/img/logo-pediatric-2.png" alt="UCM" style="width: 170px;max-width: 190px;"></a>
+          </div>
+        </section>
+        <section id="logo3" class="logo3">
+          <div>
+            <a href="../ru-pediatrics/index.php "><img src="/static/img/logotext.png" width="200" height="59" alt="UCM"></a>
+          </div>
+        </section>
+
+      <!--/ logo -->
+
+      <!-- main nav -->
+      <nav class="main-nav">
+        <ul>
+          <li>
+            <a href="/kids/kids-services.html" class=""><i class="fa fa-list-alt"></i>Услуги и цены</a>				</li>
+
+
+
+                    <li><a href="/kids/kids-news/">Новости</a></li>
+
+          <li class="right"><a href="/kids/kids-photo.html" class=""><i class="fa fa-picture-o"></i>Фотографии</a></li>
+
+               <li><a href="/kids/testimonials/">Отзывы</a></li>
+
+
+                               <li><a href="/questions.html/">Вопросы</a></li>
+
+          <li>
+            <a href="/kids/contacts.html" class=""><i class="fa fa-phone"></i>Контакты</a>
+          </li>
+
+
+        </ul>
+      </nav>
+      <!--/ main nav -->
+
+      <!-- mobile nav -->
+      <nav id="mobile-main-nav" class="mobile-main-nav">
+        <i class="fa fa-bars"></i><a href="#" class="opener">Навигация</a>
+        <ul>
+          <li><i></i><a href="/kids/kids-services.html">Услуги и цены</a></li>
+
+
+
+
+          <li><a href="/kids/kids-photo.html">Фотографии</a></li>
+
+
+          <li><a href="/kids/testimonials/">Отзывы</a></li>
+
+
+
+
+                      <li><a href="/questions.html/">Вопросы</a></li>
+          <li>
+            <a href="/kids/contacts.html">Контакты</a>
+          </li>
+                      <li>
+            <a href="../">Центр семейной медицины</a>
+          </li>
+        </ul>
+      </nav>
+      <!--/ mobile nav -->
+    </div>
+    </header>
+
+
+
+
+    {% block content %}
+
+
+
+    {% endblock %}
+
+    <footer style="display:none" class="page-footer">
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-62198340-1', 'auto');
+      ga('send', 'pageview');
+
+    </script>
+
+
+  <!-- /Google Metrics -->
+  <!-- Yandex.Metrika counter -->
+  <script type="text/javascript">
+  (function (d, w, c) {
+  (w[c] = w[c] || []).push(function() {
+      try {
+          w.yaCounter26312850 = new Ya.Metrika({id:26312850,
+                  clickmap:true,
+                  trackLinks:true,
+                  accurateTrackBounce:true});
+      } catch(e) { }
+  });
+
+  var n = d.getElementsByTagName("script")[0],
+      s = d.createElement("script"),
+      f = function () { n.parentNode.insertBefore(s, n); };
+  s.type = "text/javascript";
+  s.async = true;
+  s.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//mc.yandex.ru/metrika/watch.js";
+
+  if (w.opera == "[object Opera]") {
+      d.addEventListener("DOMContentLoaded", f, false);
+  } else { f(); }
+  })(document, window, "yandex_metrika_callbacks");
+  </script>
+  <noscript><div><img src="//mc.yandex.ru/watch/26312850" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+  <!-- /Yandex.Metrika counter -->
+      <a href="#" id="top-link" class="top-link"><i class="fa fa-angle-double-up"></i></a>
+
+      <div class="grid-row">
+
+
+                  <div class="grid-col grid-col-9">
+
+          <section class="widget-alt location">
+            <div class="widget-icon"></div>
+            <div class="widget-title">Контактная информация:</div>
+            <p>620043, г. Екатеринбург, ул.Начдива-Васильева, 1/3, +7 (343) 237-5-999, dpcfm@cfm.ru</p>
+
+
+          </section>
+
+        </div>
+
+
+        </div>
+      </div>
+    </footer>
+
+
+          <!-- copyrights -->
+    <div style="display:none" class="copyrights">© «Центр семейной медицины», 2010-2014</div>
+    <!--/ copyrights -->			<!--/ page footer -->
+
+
+  </div>
+
+  <!-- scripts -->
+
+  <!--<script type="text/javascript" src="/static/js/jquery.min.js"></script>-->
+  <script type="text/javascript" src="/static/js/jquery-ui.min.js"></script>
+  <script type="text/javascript" src="/static/js/jquery.migrate.min.js"></script>
+  <script type="text/javascript" src="/static/js/owl.carousel.min.js"></script>
+  <script type="text/javascript" src="/static/js/jquery.isotope.min.js"></script>
+  <script type="text/javascript" src="/static/js/jquery.fancybox.pack.js"></script>
+  <script type="text/javascript" src="/static/js/jquery.fancybox-media.js"></script>
+  <script type="text/javascript" src="/static/js/jquery.flot.js"></script>
+  <script type="text/javascript" src="/static/js/jquery.flot.pie.js"></script>
+  <script type="text/javascript" src="/static/js/jquery.flot.categories.js"></script>
+  <script type="text/javascript" src="/static/js/layerslider.transitions.js"></script>
+  <script type="text/javascript" src="/static/js/layerslider.kreaturamedia.jquery.js"></script>
+
+  <!-- Superscrollorama -->
+  <script type="text/javascript" src="/static/js/jquery.superscrollorama.js"></script>
+  <script type="text/javascript" src="/static/js/TweenMax.min.js"></script>
+  <script type="text/javascript" src="/static/js/TimelineMax.min.js"></script>
+  <!--/ Superscrollorama -->
+
+  <script type="text/javascript" src="/static/js/jquery.ui.core.min.js"></script>
+  <script type="text/javascript" src="/static/js/jquery.ui.widget.min.js"></script>
+  <script type="text/javascript" src="/static/js/jquery.ui.tabs.min.js"></script>
+  <script type="text/javascript" src="/static/js/jquery-ui-tabs-rotate.js"></script>
+  <script type="text/javascript" src="/static/js/jquery.ui.accordion.min.js"></script>
+  <script type="text/javascript" src="/static/js/jquery.tweet.js"></script>
+  <!-- EASYPIECHART -->
+  <script type="text/javascript" src="/static/js/jquery.easypiechart.js"></script>
+  <!--/ EASYPIECHART -->
+  <script type="text/javascript" src="/static/js/scripts.js"></script>
+  <!--/ scripts -->
+  <!-- tracking-->
+  <script type="text/javascript">
+
+  var _callibri = {
+
+    objects: {
+
+        callibri: {
+
+          block_class: "callibri_phone",
+
+          format: "+7 (#{XXX}) #{XXX}-#{XX}-#{XX}"
+
+         }
+
+     }
+
+  };
+
+  </script>
+
+  <script src="http://callibri.ru/api/module/static/js/v1/callibri.js" type="text/javascript"></script>
+  <!-- tracking-->
+
+
+  </body>
+  </html>

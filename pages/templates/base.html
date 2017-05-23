@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>ЦCM {{ flatpage.title_seo }}{{title_seo}}</title>
+<!--<base href="/" />-->
+		<!-- metas -->
+		<meta charset="utf-8">
+		<meta name='yandex-verification' content= '71d7cf7c07cbc8f8' />
+		{% if flatpage.keywords_seo %}
+		<meta name="keywords" content="{{flatpage.keywords_seo}}">
+		{% else %}
+		<meta name="keywords" content="{{keywords_seo}}">
+		{% endif %}
+		{% if flatpage.description_seo %}
+		<meta name="description" content="{{flatpage.description_seo}}">
+		{% else %}
+		<meta name="description" content="{{description_seo}}">
+		{% endif %}
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+
+
+		<!--/ metas -->
+		<!-- styles -->
+    <link rel="stylesheet" type="text/css" href="/static/css/jquery.gritter.css" />
+
+		<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/static/css/font-awesome.min.css">-->
+		<link rel="stylesheet" type="text/css" href="/static/css/slider.css">
+    <link rel="shortcut icon" href="/static/favicon.ico" type="image/x-icon">
+
+		<link rel="stylesheet" type="text/css" href="/static/css/owl.carousel.css">
+		<link rel="stylesheet" type="text/css" href="/static/css/jquery.fancybox.css">
+		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+		<link rel="stylesheet" type="text/css" href="/static/css/jquery.gritter.css" />
+		<link rel="stylesheet" type="text/css" href="/static/css/slider.css">
+		<link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+
+		<link rel="icon" href="/static/favicon.ico" type="image/x-icon">
+
+		<link rel="stylesheet" type="text/css" href="/static/css/layerslider.css">
+		<link rel="stylesheet" type="text/css" href="/static/css/fullwidth/skin.css">
+		<link rel="stylesheet" type="text/css" href="/static/css/font-awesome.css">
+		<link rel="stylesheet" type="text/css" href="/static/css/owl.carousel.css">
+		<link rel="stylesheet" type="text/css" href="/static/css/jquery.fancybox.css">
+		<link rel="stylesheet" type="text/css" href="/static/css/styles.css">
+		<link rel="stylesheet" type="text/css" href="/static/css/color-blue.css">
+		<script type="text/javascript" src="/static/js/TweenMax.min.js"></script>
+
+
+		<!--[if lt IE 9]><script src="/static/js/html5.js"></script><![endif]-->
+
+
+		<!--<script type="text/javascript" src="/static/js/jquery.min.js"></script>-->
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.3/jquery.min.js"></script>
+		<script type="text/javascript" src="/static/js/TweenMax.min.js"></script>
+		<script type="text/javascript" src="/static/js/lazyload.js"></script>
+
+
+
+<style>
+
+.row {
+     margin-right: 0px;
+     margin-left: 0px;
+}
+
+</style>
+
+
+    <!--/ Calendar code -->
+		<!--[if lt IE 9]><script src="/static/js/html5.js"></script><![endif]-->
+	</head>
+
+
+  <body id="add-without-image">
+
+  <div class="page">
+
+  <!-- Branch Selector -->
+  <div class="branch-selector">
+
+      <!--<div class="lang-select">
+  			<a id="inactive" href="Oldsite/en/index.php"><img id="flags" src="/static/img/eng.gif" height="12px" width="18px"></a>
+  			<a href="#"><img id="flags" src="/static/img/rus.gif" height="12px" width="18px"></a>
+  		</div>-->
+
+  		<div class="site-switcher">
+  			<a href="/kids/"><img src="/static/img/pediatrics-icon-bw.png" width="40px">детское поликлиническое отделение</a>
+  		</div>
+
+  		<div class="soc-icon-main">
+				{% if flatpage.phone %}
+				<a href="tel:{{flatpage.phone}}"><div class="branch-selector-text callibri_phone">{{flatpage.phone}}</div></a>
+				{% else %}
+				<a href="tel:(343) 237-1-999"><div class="branch-selector-text callibri_phone">(343) 237-1-999</div></a>
+				{% endif %}
+  			<a id="social-media-logos-viewp" href="/kids/"><img src="/static/img/pediatrics-icon-bw.png" height="30px" width="30px"></a>
+  			<a id="social-media-logos-view" target="_blank" href="http://vk.com/club76276932"><img src="/static/img/vk.png" height="30px" width="30px"></a>
+  			<a id="social-media-logos" target="_blank" href="http://www.facebook.com/cfm.ru"><img src="/static/img/zfb.png" height="30px" width="30px"></a>
+  			<a id="social-media-logos" target="_blank" href="http://www.instagram.com/cfm.ru"><img src="/static/img/ins_icon.png" height="30px" width="30px"></a>
+      </div>
+  </div>
+  			<!--/ Branch Selector -->
+
+
+
+  <!-- HEADER -->
+  	<header class="page-header main-page">
+  			<div class="page-wrapper">
+  				<!-- logo -->
+  				<section class="logo-bg">
+  				</section>
+  					<section id="logo" class="logo">
+  						<div>
+  							<a href="../ru-pediatrics/index.php"><img src="/static/img/logotext.png" width="250" height="109" alt="UCM"></a>
+  						</div>
+  					</section>
+  					<section id="logo2" class="logo2">
+  						<div>
+  							<a href="/"><img src="/static/img/logo.png"  width="134" height="109" alt="UCM"></a>
+  						</div>
+  					</section>
+  					<section id="logo3" class="logo3">
+  						<div>
+  							<a href="../ru-pediatrics/index.php "><img src="/static/img/logotext.png" width="200" height="59" alt="UCM"></a>
+  						</div>
+  					</section>
+
+  				<!--/ logo -->
+
+  				<!-- main nav -->
+  				<nav class="main-nav">
+  					<ul>
+    					<li><a href="/stock/"><i class="fa fa-info-circle"></i>Акции</a></li>
+
+               <li>
+    							<a href="#" class=""><i class="fa fa-info-circle"></i>Услуги</a>
+    							<ul>
+                    <li><a href="/infertility.html/">Бесплодие</a></li>
+                    <li><a href="/operation.html/">Гинекологические операции</a></li>
+                    <li><a href="/btp.html/">Искусственное оплодотворение</a></li>
+                    <li><a href="/beremenost.html/">Ведение беременности</a></li>
+                    <li><a href="/kids/kids-services.html/">Детское отделение</a></li>
+                    <li><a href="/donor.html/">Донорство</a></li>
+    								<!--<li><a href="/science.html">Научно-методический раздел</a></li>-->
+    							</ul>
+    						</li>
+
+
+                <li class="right"><a href="#" class="" ><i class="fa fa-building-o"></i>Филиалы</a>
+                  <ul>
+                    <li><a href="/magnitogorsk.html">Магнитогорск</a></li>
+                    <li><a href="/kurgan.html">Курган</a></li>
+    								<li><a href="/chelyabinsk.html">Челябинск</a></li>
+                  </ul>
+                </li>
+
+      					<li>
+      							<a href="#" class=""><i class="fa fa-list-alt"></i>Cтоимость услуг</a>
+                    <ul>
+                      <li><a href="/services.html/">Екатеринбург</a></li>
+                      <li><a href="/services-kyrgan.html/">Курган</a></li>
+          						<li><a href="/services-magnitogorsk.html/">Магнитогорск</a></li>
+          						<li><a href="/services-chelyabinsk.html/">Челябинск</a></li>
+                    </ul>
+      					</li>
+
+    						<li><a href="/news/"><i class="fa fa-info-circle"></i>Новости</a></li>
+    						<li class="right"><a href="/photo.html" class=""><i class="fa fa-picture-o"></i>Фотографии</a></li>
+    						<li><a href="/contacts.html" class="" ><i class="fa fa-phone"></i>Контакты</a></li>
+  					</ul>
+  				</nav>
+  				<!--/ main nav -->
+
+  				<!-- mobile nav -->
+  				<nav id="mobile-main-nav" class="mobile-main-nav">
+  					<i class="fa fa-bars"></i><a href="#" class="opener">Навигация</a>
+  					<ul>
+    						<li><a href="/stock/">Акции</a></li>
+    						<li>
+    							<i></i><a href="#">Услуги</a>
+    							<ul>
+                    <li><a href="/infertility.html/">Бесплодие</a></li>
+                    <li><a href="/operation.html/">Хирургическое лечение бесплодия</a></li>
+                    <li><a href="/btp.html/">Искусственное оплодотворение</a></li>
+                    <li><a href="/beremenost.html/">Ведение беременности</a></li>
+                    <li><a href="/kids/">Детское отделение</a></li>
+                    <li><a href="/donor.html/">Донорство</a></li>
+    								   							</ul>
+    						</li>
+
+    						<li>
+    							<i></i><a href="#">Филиалы</a>
+    							<ul>
+    					      <li><a href="/magnitogorsk.html">Магнитогорск</a></li>
+                    <li><a href="/kurgan.html">Курган</a></li>
+    								<li><a href="/chelyabinsk.html">Челябинск</a></li>
+    							</ul>
+    						</li>
+
+
+    						<li>
+    							<i></i><a>Стоимость услуг</a>
+    							<ul>
+    				        <li><a href="/services.html">Екатеринбург</a></li>
+                    <li><a href="/services-kyrgan.html">Курган</a></li>
+    								<li><a href="/services-magnitogorsk.html">Магнитогорск</a></li>
+    								<li><a href="/services-chelyabinsk.html">Челябинск</a></li>
+    							</ul>
+    						</li>
+
+                <li><a href="/news/">Новости</a></li>
+    						<li><a href="/photo.html">Фотографии</a></li>
+    						<li><a href="/contacts.html">Контакты</a></li>
+                <li><a href="/kids/">детское поликлиническое отделение</a></li>
+
+  					</ul><!--/ end ul -->
+  				</nav>
+  				<!--/ mobile nav -->
+  	</header>
+
+  <!-- HEADER -->
+
+
+{% block content %}
+
+
+
+{% endblock %}
+
+
+<!-- page footer -->
+<footer class="page-footer">
+
+<!--<script>
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-62198340-1', 'auto');
+ga('send', 'pageview');
+
+</script>--->
+
+
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+(function (d, w, c) {
+(w[c] = w[c] || []).push(function() {
+  try {
+      w.yaCounter26312850 = new Ya.Metrika({id:26312850,
+              webvisor:true,
+              clickmap:true,
+              trackLinks:true,
+              accurateTrackBounce:true});
+  } catch(e) { }
+});
+
+var n = d.getElementsByTagName("script")[0],
+  s = d.createElement("script"),
+  f = function () { n.parentNode.insertBefore(s, n); };
+s.type = "text/javascript";
+s.async = true;
+s.src = (d.location.protocol == "https:" ? "https:" : "http:") + "//mc.yandex.ru/metrika/watch.js";
+
+if (w.opera == "[object Opera]") {
+  d.addEventListener("DOMContentLoaded", f, false);
+} else { f(); }
+})(document, window, "yandex_metrika_callbacks");
+</script>
+<noscript>
+<div>
+<img src="//mc.yandex.ru/watch/26312850" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+
+  <a href="#" id="top-link" class="top-link"><i class="fa fa-angle-double-up"></i></a>
+
+  <div class="grid-row">
+    <div class="grid-col grid-col-4">
+
+      <section class="widget-alt last-news">
+        <div class="widget-icon"></div>
+        <div class="widget-title">Важные ссылки:</div>
+        <ul>
+          <li><a href="/onas.html/">О нас</a></li>
+          <li><a href="/doctors.html/">Наши специалисты</a></li>
+          <li><a href="/eco.html/">ЭКО по ОМС</a></li>
+
+          <li><a href="/online.html">Онлайн запись</a></li>
+          <li><a href="/docs.html/">Необходимые документы</a></li>
+          <li><a href="/questions.html/">У Вас есть вопросы?</a></li>
+          <li><a href="/testimonials/">Отзывы</a></li>
+          <li><a href="/vacancies.html/">Вакансии</a></li>
+        </ul>
+      </section>
+
+    </div>
+
+
+    <div class="grid-col grid-col-4">
+    	<section class="widget-alt location">
+        <div class="widget-icon"></div>
+        <div class="widget-title">Контактная информация:</div>
+        <p>620043, г. Екатеринбург, ул.Начдива-Васильева, 1/3, <br/><br/>(343) 237-1-999 <br/><br/><span id="copy-link" class="copy_class">cfm@cfm.ru</span></p>
+      </section>
+
+    </div>
+
+    <div class="grid-col grid-col-4">
+
+      <section class="widget-alt recent-posts">
+        <div class="widget-icon"></div>
+        <div class="widget-title">новости:</div>
+        <ul id="last_news">
+
+
+        </ul>
+      </section>
+
+    </div>
+
+    </div>
+  </div>
+</footer>
+
+
+<script>
+$(document).ready(function(){
+	$.ajax({
+		url:'/last_news/',
+		type:'GET',
+		dataType:'json',
+		success:function(data){
+
+			$.each(data,function(k,v){
+				$('#last_news').append('<li>'+
+				            '<p><a href="/news/'+v['id']+'/">'+v['title']+'</a><br>'+v['date']+'</p>'+
+				          '</li>')
+			})
+
+		}
+	})
+})
+</script>
+
+      <!-- copyrights -->
+<div class="copyrights">© «Центр семейной медицины»<br/>
+  <a target="_blank" href="http://cfm.ru/static/upload/Documents/license.pdf">ЛИЦЕНЗИЯ ЛО-66-01-004087 от 09.06.2016</a>
+  <div style="font-size:10px;">Все права на материалы сайта cfm.ru принадлежат АО "Центр семейной медицины". Полное  или частичное воспроизведение материалов возможно только по письменному разрешению правообладателя.</div>
+</div>
+<!--/ copyrights -->			<!--/ page footer -->
+</div>
+</div>
+		<!-- scripts -->
+		<script type="text/javascript" src="/static/js/jquery-ui.min.js"></script>
+		<script type="text/javascript" src="/static/js/jquery.migrate.min.js"></script>
+		<script type="text/javascript" src="/static/js/owl.carousel.min.js"></script>
+		<script type="text/javascript" src="/static/js/jquery.isotope.min.js"></script>
+		<script type="text/javascript" src="/static/js/jquery.fancybox.pack.js"></script>
+		<script type="text/javascript" src="/static/js/jquery.fancybox-media.js"></script>
+		<script type="text/javascript" src="/static/js/jquery.flot.js"></script>
+		<script type="text/javascript" src="/static/js/jquery.flot.pie.js"></script>
+		<script type="text/javascript" src="/static/js/jquery.flot.categories.js"></script>
+		<!--<script type="text/javascript" src="/static/js/greensock.js"></script>-->
+		<script type="text/javascript" src="/static/js/layerslider.transitions.js"></script>
+		<script type="text/javascript" src="/static/js/layerslider.kreaturamedia.jquery.js"></script>
+
+	<!-- Superscrollorama -->
+		<script type="text/javascript" src="/static/js/jquery.superscrollorama.js"></script>
+		<script type="text/javascript" src="/static/js/TimelineMax.min.js"></script>
+	<!--/ Superscrollorama -->
+
+
+    <script type="text/javascript" src="/static/js/ui/jquery-ui.min.js"></script>
+
+		<script type="text/javascript" src="/static/js/jquery.ui.core.min.js"></script>
+		<script type="text/javascript" src="/static/js/jquery.ui.widget.min.js"></script>
+		<script type="text/javascript" src="/static/js/jquery.ui.tabs.min.js"></script>
+		<script type="text/javascript" src="/static/js/jquery-ui-tabs-rotate.js"></script>
+		<script type="text/javascript" src="/static/js/jquery.ui.accordion.min.js"></script>
+		<script type="text/javascript" src="/static/js/jquery.tweet.js"></script>
+	<!-- EASYPIECHART -->
+		<script type="text/javascript" src="/static/js/jquery.easypiechart.js"></script>
+	<!--/ EASYPIECHART -->
+	<!-- timepicker----
+<script src="js/time/timepicker-ui.js"></script>
+	<!-- timepicker------>
+
+		<script type="text/javascript" src="/static/js/scripts.js"></script>
+   <!-- tracking-->
+<script type="text/javascript">
+
+   var _callibri = {
+
+      objects: {
+
+          callibri: {
+
+            block_class: "callibri_phone",
+
+            format: "+7 (#{XXX}) #{XXX}-#{XX}-#{XX}"
+
+           }
+
+       }
+
+    };
+
+</script>
+
+<script src="http://callibri.ru/api/module/static/js/v1/callibri.js" type="text/javascript"></script>
+   <!-- tracking-->
+    <!-- Notification Script -->
+
+
+
+    <!-- /Notirifaciton Script -->
+		<!--/ scripts -->
+		<script src="/static/js/mobilyslider.js" type="text/javascript"></script>
+    <script src="/static/js/init.js" type="text/javascript"></script>
+		<!-- /page footer -->
+
+	</body>
+</html>

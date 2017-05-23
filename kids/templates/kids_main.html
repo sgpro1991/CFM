@@ -1,0 +1,131 @@
+{% extends 'base-kids.html' %}
+{% block content %}
+
+
+
+        <div class="slider-wrapper">
+				<section class="slider" id="slider">
+
+
+          {% for a in pic %}
+
+          					<div onclick="location.href='/kids/{{a.link}}';" style="cursor: pointer;" class="ls-slide" data-ls="transition2d:9;slidedelay:4000;">
+          						<img src="/media/{{a.image}}" alt="" class="ls-bg">
+                    </div>
+
+          {% endfor %}
+
+
+					<!--<div onclick="location.href='/kids/programs.html';" style="cursor: pointer;" class="ls-slide" data-ls="transition2d:9;slidedelay:4000;">
+						<img src="/pic/kid.jpg" alt="" class="ls-bg">
+
+						<div class="intro ls-l" data-ls="offsetyin:top;offsetxin:0;durationin:2000;offsetyout:bottom;offsetxout:0;durationout:1000;" style="left:80%;top:35%;">
+							<span class="icon fa fa-heart"></span>
+							<h2>Добро<span>пожаловать</span></h2>
+							<div class="buttons">
+								<a href="#" class="prev"><i class="fa fa-angle-left"></i></a>
+								<a href="#" class="button">узнать больше</a>
+								<a href="#" class="next"><i class="fa fa-angle-right"></i></a>
+							</div>
+						</div>
+
+					</div>
+
+          <div class="ls-slide" onclick="location.href='/kids/programs.html';" style="cursor: pointer;"  data-ls="transition2d:9;slidedelay:4000;">
+						<img src="/pic/kids2.jpg" alt="" class="ls-bg">
+
+						<!--<div class="intro ls-l" data-ls="offsetyin:top;offsetxin:0;durationin:2000;offsetyout:bottom;offsetxout:0;durationout:1000;" style="left:80%;top:35%;">
+							<span class="icon fa fa-heart"></span>
+							<h2>Добро<span>пожаловать</span></h2>
+							<div class="buttons">
+								<a href="#" class="prev"><i class="fa fa-angle-left"></i></a>
+								<a href="#" class="button">узнать больше</a>
+								<a href="#" class="next"><i class="fa fa-angle-right"></i></a>
+							</div>
+						</div>
+					</div>
+
+          <div class="ls-slide" onclick="location.href='/kids/kids-services.html';" style="cursor: pointer;" data-ls="transition2d:9;slidedelay:4000;">
+						<img src="/pic/kids3.jpg" alt="" class="ls-bg">
+
+						<!--<div class="intro ls-l" data-ls="offsetyin:top;offsetxin:0;durationin:2000;offsetyout:bottom;offsetxout:0;durationout:1000;" style="left:80%;top:35%;">
+							<span class="icon fa fa-heart"></span>
+							<h2>Добро<span>пожаловать</span></h2>
+							<div class="buttons">
+								<a href="#" class="prev"><i class="fa fa-angle-left"></i></a>
+								<a href="#" class="button">узнать больше</a>
+								<a href="#" class="next"><i class="fa fa-angle-right"></i></a>
+							</div>
+						</div>
+					</div>-->
+
+
+
+                </section>
+					</div>
+
+
+
+
+			<!--/ slider -->
+
+			<!-- page content -->
+			<main class="page-content">
+				<div class="grid-row">
+					<!-- benefits -->
+					<section class="benefits">
+						<ul>
+							<li>
+
+                                <div class="pic" onclick="location.href='/kids/onas-kids.html';" style="cursor: pointer;"><i class="fa fa-hospital-o"></i></div>
+								<div class="text" onclick="location.href='/kids/onas-kids.html';" style="cursor: pointer;">
+									<h2>О нас</h2>
+									<p></p>
+						
+
+								</div>
+
+							</li>
+							<li>
+								<div class="pic" onclick="location.href='/kids/special/';" style="cursor: pointer;"><i class="fa fa-stethoscope"></i></div>
+								<div class="text" onclick="location.href='/kids/special/';" style="cursor: pointer;">
+									<h2>Наши специалисты</h2>
+								    <p></p>
+
+								</div>
+							</li>
+							<li>
+								<div class="pic" onclick="location.href='/kids/programs.html';" style="cursor: pointer;"><i class="fa fa-folder-open-o"></i></div>
+								<div class="text" onclick="location.href='/kids/programs.html';" style="cursor: pointer;">
+									<h2>Программы</h2>
+									<p></p>
+
+								</div>
+							</li>
+							<li>
+								<div class="pic" onclick="location.href='/kids/online-kids.html';" style="cursor: pointer;"><i class="fa fa-calendar"></i></div>
+								<div class="text" onclick="location.href='/kids/online-kids.html';" style="cursor: pointer;">
+									<h2>Онлайн запись</h2>
+									<p></p>
+
+								</div>
+							</li>
+						</ul>
+					</section>
+					<!--/ benefits -->
+				</div>
+
+				<div class="grid-row">
+
+
+				</div>
+
+                <div class="grid-row" id="aligncenter">
+
+
+                </div>
+
+
+			</main>
+
+{% endblock %}

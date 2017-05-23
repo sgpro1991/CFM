@@ -1,0 +1,108 @@
+{% extends 'base.html' %}
+{% block content %}
+<br>
+<div style="background:#fff;padding: 20px;margin: 0 auto 20px;max-width:1210px">
+<div class="grid-row">
+{{ flatpage.content }}
+
+
+
+<section class="widget widget-appointment">
+
+				<form action="/form/online/" method="POST" name="contactform">
+                                {% csrf_token %}
+                                <fieldset>
+								<div class="row">
+									<input type="text" name="nameOnline" placeholder="имя" required>
+									<i class="fa fa-user"></i>
+								</div>
+								<div class="row">
+									<input type="tel" name="phoneOnline" placeholder="телефонный номер">
+									<i class="fa fa-phone"></i>
+								</div>
+								<div class="row">
+									<input type="email" name="emailOnline" placeholder="электронная почта" required>
+									<i class="fa fa-envelope"></i>
+								</div>
+								<div class="row">
+									<input type="text" name="dateOnline" placeholder="Дата назначение" id="datepicker">
+									<i class="fa fa-calendar2"></i>
+								</div>
+                                <div class="row">
+									<select name="dayOnline">
+                                        <option value="Первичный прием">Первичный прием</option>
+                                        <option value="Повторный прием">Повторный прием</option>
+                                    </select>
+									<i class="fa fa-question"></i>
+								</div>
+								<div class="row">
+									<textarea cols="30" rows="5" name="messageOnline" placeholder="Сообщение"></textarea>
+									<i class="fa fa-align-left"></i>
+								</div>
+
+
+								<button type="submit" name="submit" class="button" value="Submit">Отправить</button>
+
+                         </fieldset>
+							</form>
+
+	</section>
+
+
+	 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+         <script type="text/javascript" src="/static/js/moment.js"></script>
+         <script type="text/javascript" src="/static/js/pikaday.js"></script>
+        <script type="text/javascript" src="/static/js/pikaday.jquery.js"></script>
+    <script>
+
+
+
+    var $datepicker = $('#datepicker').pikaday({
+        firstDay: 1,
+        minDate: moment().add('d', 2).toDate(),
+        maxDate: new Date('2020-12-31'),
+        yearRange: [2000,2020]
+    });
+    // chain a few methods for the first datepicker, jQuery style!
+
+
+
+
+    </script>
+
+
+</div>
+</div>
+
+
+<script>
+$(document).ready(function(){
+
+
+			$(window).load(function(){
+
+
+  			$('.ui-state-default').each(function(){
+  				$(this).removeClass('ui-tabs-active');
+  			})
+
+
+  			var url = location.href;
+  			var init = url.match( /.$/ );
+
+  			var t = '#ui-id-'+init[0];
+
+  			$( ".wpb_tabs" ).tabs({
+  			  active: init,
+   			  activate: function( event, ui ) {
+
+  					location.hash=ui.newTab.index();
+  			  }
+  			});
+
+			     var a = $('#ui-id-5').parent().attr('class');
+			})
+	   })
+</script>
+
+{% endblock %}

@@ -1,0 +1,75 @@
+@media screen and (max-width: 760px){
+
+     #dl-menu{
+       display:block;
+	 }
+
+
+	.ph-lift1{
+	display:none;
+	}
+	.slider{
+	display:none;
+	}
+	
+	.container{
+	width: 420px;
+	}
+	
+	#content{
+	  font-size: 12px;
+	}
+	#wrapper{
+	max-width:500px;
+	
+	}
+
+	.whitesec{
+	margin:0;
+	padding:0;
+	}
+
+
+	#logox{
+	  margin: 20px 40px;
+	  width: 120px;
+	}
+	
+	#capname{
+	  margin:0 auto;
+	  width: 170px;
+	}
+
+	#caphead{
+       border-bottom: 1px solid #ccc;
+	}
+
+    .info-boxN{
+      display:flex;
+	  height:30px;
+	  overflow:auto;
+
+	}
+
+    .two-thirds{
+	height:520px;
+
+	}
+
+
+   table{
+     width:430px !important;
+
+   }
+
+    table a>img{
+     height:160px !important;
+	}
+
+	table a{
+      text-align:center;
+
+	}
+
+
+}

@@ -1,0 +1,349 @@
+{% extends 'base.html' %}
+{% block content %}
+
+
+<!-- slider -->
+	<div class="slider-wrapper">
+				<section class="slider" id="slider">
+            <div class="slider slider3">
+    						<div class="sliderContent">
+
+										{% for a in pic %}
+
+										<div class="item">
+											<a href="{{a.link}}"><img src="/media/{{ a.image }}" alt="{{a.title}}" /></a>
+										</div>
+
+										{% endfor %}
+
+      						<!--	<div class="item">
+      								<a href=""><img src="/static/wrong_images/glavnay.jpg" alt="" /></a>
+      							</div>
+      							<div class="item">
+      								<a href="/beremenost.html"><img src="/static/wrong_images/berem.jpg" alt="" /></a>
+      							</div>
+      							<div class="item">
+      								<a href=""><img src="/static/wrong_images/new2.jpg" alt="" /></a>
+      							</div>
+      							<div class="item">
+      								<a href=""><img src="/static/wrong_images/ban1.jpg" alt="" /></a>
+      							</div>-->
+    						</div>
+  					</div>
+				</section>
+	</div>
+  <!--/ slider -->
+
+
+
+
+
+
+
+
+
+			<!-- page content -->
+			<main class="page-content">
+				<div class="grid-row">
+					<!-- benefits -->
+					<section class="benefits">
+						<ul>
+							<a href="/onas.html/">
+								<li class="main_sub_menu" style="background:#008fd5">
+
+	                <div class="pic" onclick="location.href='/about/';" style="cursor: pointer;"><div class="fa fa-hospital-o"></div></div>
+									<div class="text1" onclick="location.href='/about/';" style="cursor: pointer;">
+										<h2>О нас</h2>
+									</div>
+								</li>
+							</a>
+
+							<a href="/doctors.html/" >
+								<li class="main_sub_menu">
+									<div class="pic" onclick="location.href='/doctors.html/';" style="cursor: pointer;"><div class="fa fa-stethoscope"></div></div>
+									<div class="text1" onclick="location.href='/doctors.html/';" style="cursor: pointer;">
+										<h2>Наши специалисты</h2>
+									</div>
+								</li>
+							</a>
+
+							<a href="/eco.html/" >
+								<li  class="main_sub_menu" style="background:#008fd5">
+									<div class="pic" style="cursor: pointer;"><div class="fa fa-child"></div></div>
+									<div class="text1" style="cursor: pointer;">
+										<h2>ЭКО по ОМС</h2>
+									</div>
+								</li>
+							</a>
+
+							<a href="/online.html/" >
+								<li class="main_sub_menu">
+									<div class="pic"  style="cursor: pointer;"><div class="fa fa-calendar"></div></div>
+									<div class="text1" style="cursor: pointer;">
+										<h2>Онлайн запись</h2>
+									</div>
+								</li>
+							</a>
+
+						</ul>
+					</section>
+					<!--/ benefits -->
+				</div>
+
+
+
+<div class="grid-row" id="banner-center">
+
+</div>
+
+
+
+
+
+				<div class="grid-row">
+<!--counter-->
+
+<div class="counter_box">
+<div class="box_kalk">
+<span class="counter" id="counter_1">0</span><br>
+<span class="count_text">Месяцев работы</span>
+</div>
+<div class="box_kalk">
+
+<span class="counter" id="counter_2">0</span><br>
+<span class="count_text">Программ ВРТ</span>
+</div>
+
+<div class="box_kalk">
+
+<span class="counter" id="counter_3">0</span><br>
+<span class="count_text">Рожденных детей</span>
+</div>
+
+<div class="box_kalk">
+<span class="counter" id="counter_4">0</span><br>
+<span class="count_text">Филиала</span>
+</div>
+
+<div class="box_kalk">
+<span class="counter" id="counter_5">0</span><br>
+<span class="count_text">Квалифицированных специалистов клиники</span>
+</div>
+
+<!--<div class="box_kalk">
+<div class="counter" style="position: absolute;margin:0 -30px;font-weight: lighter;">=</div>
+<span class="counter" id="counter_6">0</span><b class="counter">%</b><br>
+<span class="count_text">Гарантия успеха</span>
+</div>/counter-->
+</div>
+					<!-- services -->
+					<section class="services" style="clear:both;">
+						<ul>
+							<li>
+								<a class="pic" href="/docs.html/"><i class="fa fa-group"></i></a>
+								<div class="text">
+									<h2><a href="/docs.html/">Для потребителей</a></h2>
+									<p></p>
+									<a href="/docs.html/" class="more fa fa-long-arrow-right"></a>
+								</div>
+							</li>
+							<li>
+								<a class="pic" href="/questions.html/"><i class="fa fa-question"></i></a>
+								<div class="text">
+									<h2><a href="/questions.html/">У вас есть вопросы?</a></h2>
+									<p></p>
+									<a href="/questions.html/" class="more fa fa-long-arrow-right"></a>
+								</div>
+							</li>
+                            <li>
+								<a class="pic" href="/testimonials/"><i class="fa fa-comment"></i></a>
+								<div class="text">
+									<h2><a href="/testimonials/">Отзывы</a></h2>
+									<p></p>
+									<a href="/testimonials/" class="more fa fa-long-arrow-right"></a>
+								</div>
+							</li>
+							<li>
+								<a class="pic" href="/vacancies.html/"><i class="fa fa-suitcase"></i></a>
+								<div class="text">
+									<h2><a href="/vacancies.html/">Вакансии</a></h2>
+									<p></p>
+									<a href="/vacancies.html/" class="more fa fa-long-arrow-right"></a>
+								</div>
+							</li>
+
+						</ul>
+					</section>
+				</div>
+			</main>
+
+<script>
+
+  $(document).ready(function(){
+
+/*
+      var pic = new Image();    // создаем объект "изображение"
+      pic.src = '/static/ezgif.com-gif-maker (1).gif' ; // указываем источник изображения
+      $(pic).load(function() { // вешаем на наш объект анонимную функцию на событие LOAD при помощи jQuery
+
+      console.log(pic)
+           $('#banner-center').append('<a target="Blank" href="/donor.html"><img src="ezgif.com-gif-maker (1).gif"/></a>');
+      });
+*/
+      start2 = 0;
+      start3 = 0;
+      start4 = 0;
+      start5 = 0;
+      start6 = 0;
+      start7 = 0;
+
+      var height = 50;
+
+      var timerId,timerId2,timerId3,timerId4,timerId5,timerId6 = null;
+
+
+      function add_counter_1(){
+
+      if(start2 == {{count.mon}} ){
+      clearTimeout(timerId);
+
+      }else{
+
+      start2 += 1;
+
+      $('#counter_1').html(start2);
+
+      }
+
+      }
+
+
+      function add_counter_2(){
+
+      if(start3>={{count.vrt}}){
+      clearTimeout(timerId2);
+      }else{
+
+      start3 += 5;
+
+      $('#counter_2').html(start3);
+      }
+      }
+
+      function add_counter_3(){
+
+      if(start4>={{count.kids}}){
+      clearTimeout(timerId3);
+      }else{
+
+      start4 += 5;
+
+      $('#counter_3').html(start4);
+      }
+      }
+
+      function add_counter_4(){
+
+      if(start5=={{count.filials}}){
+      clearTimeout(timerId4);
+      }else{
+
+      start5 += 1;
+
+      $('#counter_4').html(start5);
+      }
+      }
+
+      function add_counter_5(){
+
+      if(start6 == {{count.doctors}} ){
+      clearTimeout(timerId5);
+
+      }else{
+
+      start6 += 1;
+
+      $('#counter_5').html(start6);
+      }
+      }
+
+      function add_counter_6(){
+
+      if(start7 == 100 ){
+      clearTimeout(timerId6);
+
+      }else{
+
+      start7 += 1;
+
+      $('#counter_6').html(start7);
+      }
+      }
+
+
+
+      function INIT_COUNT(a){
+
+      //if(timerId!==null) return;
+
+       timerId = setInterval(function(){
+
+       if(a>height){
+       add_counter_1()
+       }
+       },10) ;
+
+       timerId2 = setInterval(function(){
+       if(a>height){
+       add_counter_2()
+      }
+       },0) ;
+
+
+       timerId3 = setInterval(function(){
+       if(a>height){
+       add_counter_3()
+      }
+       },0) ;
+
+
+        timerId4 = setInterval(function(){
+       if(a>height){
+        add_counter_4()
+      }
+        },750) ;
+
+       timerId5 = setInterval(function(){
+        if(a>height){
+       add_counter_5()
+      }
+       },50) ;
+
+       timerId6 = setInterval(function(){
+        if(a>height){
+       add_counter_6()
+      }
+       },50) ;
+
+
+      }
+
+
+
+
+
+
+      $(window).scroll(function(){
+      var a = $(this).scrollTop();
+
+      INIT_COUNT(a);
+
+      });
+
+
+      });
+
+</script>
+
+			<!--/ page content -->
+    {% endblock %}

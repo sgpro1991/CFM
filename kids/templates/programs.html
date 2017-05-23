@@ -1,0 +1,29 @@
+{% extends 'base-kids.html' %}
+{% block content %}
+
+
+<main class="page-content vc_responsive">
+<br>
+<br>
+<br>
+<div class="grid-row">
+<div class="widget-title">Программы</div>
+{% for a in programs %}
+<section class="detailed-services wpb_content_element">
+<dl>
+	<dt class="closed"><em><em>{{a.title}}</em></em></dt>
+	<dd style="margin:0px">
+	<div class="row grid-row" >
+    <div  style="padding:20px;">
+    {{a.response|safe}}
+  </div>
+	</div>
+	</dd>
+</dl>
+</section>
+{% endfor %}
+</div>
+
+</main>
+
+{% endblock %}

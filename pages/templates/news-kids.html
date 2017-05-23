@@ -1,0 +1,36 @@
+{% extends 'base-kids.html' %}
+{% block content %}
+		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.0/css/bootstrap.css">
+<main class="page-content vc_responsive">
+	<div class="grid-row" style="">
+    <div class="widget-title">Новости</div>
+		<section>
+
+    
+    {% for a in news %}
+<div class="col-xs-12 col-sm-12 col-md-4">
+        <a href="?id={{a.id}}">
+					  <div class="item news" style="">
+							{% if a.image %}
+					   	<img src="/media/{{a.image}}" />
+							{% endif %}
+							  <h3 style="font-size:20px;color:#444;">{{a.title}}</h3>
+							  <div class="date">{{a.date}}<span></span></div>
+
+                <div class="addnews">
+    				      <p class="summary"></p>
+    						</div>
+
+						    <p style="padding: 10px;color: #555;">{{a.description}}</p>
+          </div>
+        </a>
+</div>
+    {% endfor %}
+
+    
+  </section>
+</div>
+</main>
+
+
+{% endblock %}

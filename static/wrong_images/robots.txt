@@ -1,0 +1,15 @@
+User-Agent: Yandex
+Disallow: /oldsite/
+Disallow: /upload/
+Disallow: /php_mailer/
+Disallow: /pic/
+Disallow: /pic-kids/
+
+User-agent: *
+Disallow: /oldsite/
+Disallow: /upload/
+Disallow: /php_mailer/
+Disallow: /pic/
+Disallow: /pic-kids/
+host: http://www.cfm.ru/
+Sitemap: http://www.cfm.ru/sitemap/xml

@@ -1,0 +1,242 @@
+.map{
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  opacity: 0.7;
+  border-top: 3px solid chocolate;
+}
+
+.page{
+color:#fff;
+
+}
+
+.p_style{
+  text-align: center;
+}
+.list-group{
+  margin: 0 auto;
+max-width: 760px ;
+}
+
+
+.podlojka{
+  width: 100%;
+  /* padding: 10% 10%; */
+  z-index: 99;
+  /* opacity: 0.5; */
+  height: 100%;
+  /* background: #262F36; */
+  background: rgba(35,64,65,0.7);
+}
+.page:nth-child(odd){
+  background: #777;
+}
+
+
+.page:nth-child(even){
+  background: #555557;
+}
+
+.slider_a{
+  display: inline-block !important;
+}
+
+.blur{
+  background-position: center;
+  background-size:cover !important;
+  -webkit-filter: blur(7px);
+     -moz-filter: blur(7px);
+       -o-filter: blur(7px);
+      -ms-filter: blur(7px);
+          filter: blur(7px);
+}
+
+
+.backimage{
+  background-position: center;
+  background-size:cover !important;
+}
+
+
+.main_form{
+  width: 100%;
+      background: transparent;
+      border: none;
+      outline: none;
+}
+
+
+.podlogka{
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+  height: 100%;
+  z-index: 9;
+  opacity: 0.5;
+  background: darkslategray;
+}
+
+.scroller{
+  position: absolute;
+  bottom: 0;
+  opacity: 1;
+  z-index: 9;
+  transition: all 0.7s;
+}
+
+.active_scroller{
+	opacity: 0;
+}
+.phone{
+  position: fixed;
+  z-index: 99;
+  right: 25px;
+  font-weight: bold;
+  top: 25px;
+  color: #fff;
+  font-size: 21px;
+}
+.phone i{
+  font-size: 30px;
+  color: #f00;
+  border-radius: 30px;
+  background: #fff;
+  padding: 10px;
+  opacity: 0.5;
+}
+
+
+.trigger{
+  position: absolute;
+  left: 2%;
+  z-index: 9;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+
+
+
+
+.btn {
+    text-decoration: none;
+    font-family: Trebuchet MS, Tahoma, Verdana, Arial, sans-serif !important;
+    border: 1px solid #be951a !important;
+    background: #fecd1d;
+    background: -moz-linear-gradient(top, #fecd1d 0%, #ff8a00 100%) !important;
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #fecd1d), color-stop(100%, #ff8a00)) !important;
+    background: -webkit-linear-gradient(top, #fecd1d 0%, #ff8a00 100%) !important;
+    background: -o-linear-gradient(top, #fecd1d 0%, #ff8a00 100%) !important;
+    background: -ms-linear-gradient(top, #fecd1d 0%, #ff8a00 100%) !important;
+    background: linear-gradient(top, #fecd1d 0%, #ff8a00 100%) !important;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr = '#fecd1d', endColorstr = '#ff8a00', GradientType = 0) !important;
+}
+
+
+.alp {
+    margin-top: 80px;
+}
+
+
+section ul.list-group {
+    width: 100%;
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+.logo {
+    position: fixed;
+    z-index: 99;
+    top: 10px;
+    left: 10px;
+}
+
+.logo img {
+  width: 100px;
+  border-radius: 50%;
+  opacity: 0.7;
+}
+
+
+.main section:first-of-type {
+    /* background-image: url(/static/images/section1.jpg); */
+    background-size: cover;
+    background-position: left bottom;
+}
+.main section:nth-of-type(2) {
+    background-image: url(/static/images/section2.jpg);
+    background-size: cover;
+    background-position: center bottom;
+}
+
+
+.img_bank {
+    width: 100px;
+    margin: 0 10px;
+}
+
+.mobile-display {
+    display: none;
+}
+
+@media screen and (max-width: 42em) {
+    section ul.list-group img {
+        display: none;
+    }
+
+    section ul.list-group {
+        margin-bottom: 10px;
+    }
+
+    .phone {
+        font-size: 16px;
+    }
+
+    .phone i {
+        font-size: 1.33333333em;
+    }
+
+    .logo {
+        top: 20px;
+    }
+
+    .logo img {
+        width: 30px;
+    }
+
+
+    section ul.list-group .list-group-item input {
+        padding: 10px 15px;
+    }
+
+    section ul.list-group .list-group-item {
+        padding: 2px;
+    }
+
+    .list-group-item.nomobile {
+        display: none;
+    }
+
+    section > video {
+        display: none;
+    }
+
+    .mobile-display {
+        display: block;
+    }
+
+    .desktop-display {
+        display: none;
+    }
+
+    ul > li.desktop-display {
+        display: none;
+    }
+
+    .main section:nth-of-type(2) {
+        background-image: none;
+    }
+
+}

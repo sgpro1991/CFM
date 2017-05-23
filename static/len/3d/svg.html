@@ -1,0 +1,1073 @@
+<!DOCTYPE html>
+<html>
+    <head>
+              <link rel="stylesheet" type="text/css" href="../css/bootstrap.css?2017011101" />
+        <style>
+            polyline:hover {
+                fill:#f00;
+                cursor: pointer;
+            }
+              g{
+                fill:#288680;
+                opacity: 0.6;
+              }
+            svg {
+                position: absolute;
+                top: 0;
+            }
+
+            body{
+              overflow-x: hidden;
+            }
+
+            .el-plan-img object.flat{width:49%;max-height:50vh}
+            .el-plan-g_flat{opacity:0.5}
+            .el-plan-g_flat:hover{opacity:0.6}
+
+            .canvas{
+              overflow: hidden;
+              width: 100%;
+              height: 100%;
+            }
+
+            .canvas img{
+              -moz-user-select: -moz-none;
+              -khtml-user-select: none;
+              -webkit-user-select: none;
+              -o-user-select: none;
+              user-select: none;
+            }
+              .info{
+                width: 90%;
+                height: 100%;
+                background: #fff;
+                z-index: 99;
+                  position: fixed;
+                right: -100%;
+                box-shadow: 0 0 30px #999;
+                -webkit-transition: all 900ms cubic-bezier(0.075, 0.82, 0.165, 1) 10ms;
+              -moz-transition: all 900ms cubic-bezier(0.075, 0.82, 0.165, 1) 10ms;
+              -o-transition: all 900ms cubic-bezier(0.075, 0.82, 0.165, 1) 10ms;
+              transition: all 900ms cubic-bezier(0.075, 0.82, 0.165, 1) 10ms;
+              }
+              .close{
+                position: absolute;
+                left: 10px;
+                top: 10px;
+                font-size: 40px;
+                -webkit-transition: all 1900ms cubic-bezier(0.075, 0.82, 0.165, 1) 10ms;
+              -moz-transition: all 1900ms cubic-bezier(0.075, 0.82, 0.165, 1) 10ms;
+              -o-transition: all 1900ms cubic-bezier(0.075, 0.82, 0.165, 1) 10ms;
+              transition: all 1900ms cubic-bezier(0.075, 0.82, 0.165, 1) 10ms;
+              }
+
+              .close:hover{
+                  -webkit-transform-origin: 50% 50% 50%;
+                -webkit-transform: rotateZ(140deg)   ;
+                transform: rotateZ(140deg)   ;
+              }
+
+
+              .active{
+                right: 0;
+
+              }
+              .info_for_hover{
+                position: fixed;
+                width: 100px;
+                height: 100px;
+                background: #fff;
+                display: none;
+                z-index: 99;
+                border-radius: 10px;
+              }
+        </style>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+        <script>
+          function GET_APARTMENTS(){
+
+          }
+
+
+        $(document).ready(function(){
+          //alert(1)
+
+          $('g').mouseover(function(e){
+            //$(this)
+            var relativePosition = {
+                left: e.pageX - $(document).scrollLeft() - $('body').offset().left,
+                top : e.pageY - $(document).scrollTop() - $('body').offset().top
+              };
+            //  $('#mousepos').html('<p>x: ' + relativePosition.left + ' y: ' + relativePosition.top + ' </p>');
+
+            $('.info_for_hover').css({'left': (relativePosition.left+20)+'px', 'top':(relativePosition.top+10)+'px','display':'block'} );
+          })
+
+          $('g').mouseout(function(e){
+            $('.info_for_hover').css({'display':'none'})
+          })
+
+          $('.j-flat').click(function(){
+            $('.content').empty()
+            $('.info').toggleClass('active')
+          })
+
+          $('.close').click(function(){
+            $('.content').empty()
+
+             $('.info').removeClass('active')
+
+          })
+
+        })
+        </script>
+    </head>
+    <body>
+
+        <div style=" position: relative;">
+            <div class="info_for_hover"></div>
+            <!-- <img src="https://image.jimcdn.com/app/cms/image/transf/none/path/s72432a10d6ed924b/image/idda9f2def5f82d89/version/1314965886/%D0%BE%D0%B1%D0%BE%D0%B8-%D0%B4%D0%B5%D0%B2%D1%83%D1%88%D0%BA%D0%B8-%D0%BC%D0%BE%D1%80%D0%B5.jpg" width="100%"> -->
+
+            <!-- <img src="file:///home/lam015/btsync/coding/html/lcferrum.ru/media_stuff/resized_for_3d_select_floor/general_view_select_floor_1280x960_grid_test.png" width="100%"> -->
+            <div class="info">
+              <div class="close"><span class="glyphicon glyphicon-remove"></span></div>
+              <div class="content"></div>
+            </div>
+
+          <div class="canvas">
+            <img src="../images/general_view_select_floor.jpg" width="100%">
+          </div>
+
+            <!-- <svg xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" viewBox="0 0 971.3844604 429.8955994" id="svg2" class="floorPlanSvg" version="1.1" inkscape:version="0.48.4 r9939" width="100%" height="100%" sodipodi:docname="51_float_5-14_big_cleaned.svg" <sodipodi:namedview=""> -->
+            <svg
+                xmlns:dc="http://purl.org/dc/elements/1.1/"
+                xmlns:cc="http://creativecommons.org/ns#"
+                xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+                xmlns:svg="http://www.w3.org/2000/svg"
+                xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink"
+                xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+                xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+
+                viewBox="0 0 1280 960"
+
+                id="svg2"
+                class="floorPlanSvg"
+                version="1.1"
+                inkscape:version="0.48.4 r9939"
+                width="100%"
+                height="100%"
+                sodipodi:docname="51_float_5-14_big_cleaned.svg"
+                sodipodi:namedview="">
+                <g>
+
+                    <!-- section 1Г -->
+
+                    <!-- floor 1 -->
+                    <g class="el-plan-g_flat j-flat">
+                        <polyline opacity="0.5" fill="" points="
+                            318,805
+                            366,866
+                            537,775
+                            538,785
+                            368,876
+                            322,818
+                        "></polyline>
+                    </g>
+                    <!-- /floor 1 -->
+
+                    <!-- floor 2 -->
+                    <g class="el-plan-g_flat j-flat">
+                        <polyline opacity="0.5" fill="" points="
+                            315,794
+                            363,855
+                            536,763
+                            537,775
+                            366,866
+                            318,805
+                        "></polyline>
+                    </g>
+                    <!-- /floor 2 -->
+
+                    <!-- floor 3 -->
+                    <g class="el-plan-g_flat j-flat">
+                        <polyline opacity="0.5" fill="" points="
+                            310,779
+                            360,844
+                            535,752
+                            536,763
+                            363,855
+                            315,794
+                        "></polyline>
+                    </g>
+                    <!-- /floor 3 -->
+
+                    <!-- floor 4 -->
+                    <g class="el-plan-g_flat j-flat">
+                        <polyline opacity="0.5" fill="" points="
+                            307,768
+                            357,833
+                            534,741
+                            535,752
+                            360,844
+                            310,779
+                        "></polyline>
+                    </g>
+                    <!-- /floor 4 -->
+
+                    <!-- floor 5 -->
+                    <g class="el-plan-g_flat j-flat">
+                        <polyline opacity="0.5" fill="" points="
+                            304,758
+                            353,821
+                            533,729
+                            534,741
+                            357,833
+                            307,768
+                        "></polyline>
+                    </g>
+                    <!-- /floor 5 -->
+
+                    <!-- floor 6 -->
+                    <g class="el-plan-g_flat j-flat">
+                        <polyline opacity="0.5" fill="" points="
+                            299,745
+                            350,808
+                            531,717
+                            533,729
+                            353,821
+                            304,758
+                        "></polyline>
+                    </g>
+                    <!-- /floor 6 -->
+
+                    <!-- floor 7 -->
+                    <g class="el-plan-g_flat j-flat">
+                        <polyline opacity="0.5" fill="" points="
+                            296,734
+                            346,795
+                            530,704
+                            531,717
+                            350,808
+                            299,745
+                        "></polyline>
+                    </g>
+                    <!-- /floor 7 -->
+
+                    <!-- floor 8 -->
+                    <g class="el-plan-g_flat j-flat">
+                        <polyline opacity="0.5" fill="" points="
+                            292,721
+                            343,785
+                            529,691
+                            530,704
+                            346,795
+                            296,734
+                        "></polyline>
+                    </g>
+                    <!-- /floor 8 -->
+
+                    <!-- floor 9 -->
+                    <g class="el-plan-g_flat j-flat">
+                        <polyline opacity="0.5" fill="" points="
+                            288,709
+                            340,772
+                            528,679
+                            529,691
+                            343,785
+                            292,721
+                        "></polyline>
+                    </g>
+                    <!-- /floor 9 -->
+
+                    <!-- floor 10 -->
+                    <g class="el-plan-g_flat j-flat">
+                        <polyline opacity="0.5" fill="" points="
+                            285,697
+                            337,760
+                            526,665
+                            528,679
+                            340,772
+                            288,709
+                        "></polyline>
+                    </g>
+                    <!-- /floor 10 -->
+
+                    <!-- floor 11 -->
+                    <g class="el-plan-g_flat j-flat">
+                        <polyline opacity="0.5" fill="" points="
+                            281,684
+                            333,746
+                            531,646
+                            532,662
+                            337,760
+                            285,697
+                        "></polyline>
+                    </g>
+                    <!-- /floor 11 -->
+
+                    <!-- floor 12 -->
+                    <g class="el-plan-g_flat j-flat">
+                        <polyline opacity="0.5" fill="" points="
+                            276,669
+                            329,732
+                            530,632
+                            531,646
+                            333,746
+                            281,684
+                        "></polyline>
+                    </g>
+                    <!-- /floor 12 -->
+
+                    <!-- floor 13 -->
+                    <g class="el-plan-g_flat j-flat">
+                        <polyline opacity="0.5" fill="" points="
+                            272,655
+                            325,719
+                            528,619
+                            530,632
+                            329,732
+                            276,669
+                        "></polyline>
+                    </g>
+                    <!-- /floor 13 -->
+
+                    <!-- floor 14 -->
+                    <g class="el-plan-g_flat j-flat">
+                        <polyline opacity="0.5" fill="" points="
+                            267,639
+                            322,704
+                            527,603
+                            528,619
+                            325,719
+                            272,655
+                        "></polyline>
+                    </g>
+                    <!-- /floor 14 -->
+
+                    <!-- floor 15 -->
+                    <g class="el-plan-g_flat j-flat">
+                        <polyline opacity="0.5" fill="" points="
+                            262,625
+                            317,690
+                            526,590
+                            527,603
+                            322,704
+                            267,639
+                        "></polyline>
+                    </g>
+                    <!-- /floor 15 -->
+
+                    <!-- floor 16 -->
+                    <g class="el-plan-g_flat j-flat">
+                        <polyline opacity="0.5" fill="" points="
+                            258,610
+                            313,674
+                            525,574
+                            526,590
+                            317,690
+                            262,625
+                        "></polyline>
+                    </g>
+                    <!-- /floor 16 -->
+
+                    <!-- floor 17 -->
+                    <g class="el-plan-g_flat j-flat">
+                        <polyline opacity="0.5" fill="" points="
+                            253,595
+                            309,659
+                            523,559
+                            525,574
+                            313,674
+                            258,610
+                        "></polyline>
+                    </g>
+                    <!-- /floor 17 -->
+
+                    <!-- floor 18 -->
+                    <g class="el-plan-g_flat j-flat">
+                        <polyline opacity="0.5" fill="" points="
+                            248,578
+                            304,643
+                            522,542
+                            523,559
+                            309,659
+                            253,595
+                        "></polyline>
+                    </g>
+                    <!-- /floor 18 -->
+
+                    <!-- floor 19 -->
+                    <g class="el-plan-g_flat j-flat">
+                        <polyline opacity="0.5" fill="" points="
+                            243,561
+                            300,627
+                            520,526
+                            522,542
+                            304,643
+                            248,578
+                        "></polyline>
+                    </g>
+                    <!-- /floor 19 -->
+
+                    <!-- floor 20 -->
+                    <g class="el-plan-g_flat j-flat">
+                        <polyline opacity="0.5" fill="" points="
+                            238,546
+                            295,610
+                            519,509
+                            520,526
+                            300,627
+                            243,561
+                        "></polyline>
+                    </g>
+                    <!-- /floor 20 -->
+
+                    <!-- floor 21 -->
+                    <g class="el-plan-g_flat j-flat">
+                        <polyline opacity="0.5" fill="" points="
+                            233,529
+                            291,593
+                            518,491
+                            519,509
+                            295,610
+                            238,546
+                        "></polyline>
+                    </g>
+                    <!-- /floor 21 -->
+
+                    <!-- floor 22 -->
+                    <g class="el-plan-g_flat j-flat">
+                        <polyline opacity="0.5" fill="" points="
+                            227,510
+                            286,575
+                            516,474
+                            518,491
+                            291,593
+                            233,529
+                        "></polyline>
+                    </g>
+                    <!-- /floor 22 -->
+
+                    <!-- floor 23 -->
+                    <g class="el-plan-g_flat j-flat">
+                        <polyline opacity="0.5" fill="" points="
+                            221,492
+                            281,557
+                            514,455
+                            516,474
+                            286,575
+                            227,510
+                        "></polyline>
+                    </g>
+                    <!-- /floor 23 -->
+
+                    <!-- floor 24 -->
+                    <g class="el-plan-g_flat j-flat">
+                        <polyline opacity="0.5" fill="" points="
+                            215,472
+                            276,538
+                            513,436
+                            514,455
+                            281,557
+                            221,492
+                        "></polyline>
+                    </g>
+                    <!-- /floor 24 -->
+
+                    <!-- floor 25 -->
+                    <g class="el-plan-g_flat j-flat">
+                        <polyline opacity="0.5" fill="" points="
+                            210,454
+                            271,519
+                            511,418
+                            513,436
+                            276,538
+                            215,472
+                        "></polyline>
+                    </g>
+                    <!-- /floor 25 -->
+
+                    <!-- /section 1Г -->
+
+                    <!-- section 1Б/1В -->
+
+                    <!-- floor 1 -->
+                    <g class="el-plan-g_flat j-flat">
+                        <polyline opacity="0.5" fill="" points="
+                            596,673
+                            642,718
+                            855,603
+                            855,615
+                            640,731
+                            596,687
+                        "></polyline>
+                    </g>
+                    <!-- /floor 1 -->
+
+                    <!-- floor 2 -->
+                    <g class="el-plan-g_flat j-flat">
+                        <polyline opacity="0.5" fill="" points="
+                            590,654
+                            642,706
+                            861,588
+                            860,601
+                            642,718
+                            590,667
+                        "></polyline>
+                    </g>
+                    <!-- /floor 2 -->
+
+                    <!-- floor 3 -->
+                    <g class="el-plan-g_flat j-flat">
+                        <polyline opacity="0.5" fill="" points="
+                            590,642
+                            642,694
+                            863,576
+                            861,588
+                            642,706
+                            590,654
+                        "></polyline>
+                    </g>
+                    <!-- /floor 3 -->
+
+                    <!-- floor 4 -->
+                    <g class="el-plan-g_flat j-flat">
+                        <polyline opacity="0.5" fill="" points="
+                            590,628
+                            642,677
+                            865,561
+                            863,576
+                            642,694
+                            590,642
+                        "></polyline>
+                    </g>
+                    <!-- /floor 4 -->
+
+                    <!-- floor 5 -->
+                    <g class="el-plan-g_flat j-flat">
+                        <polyline opacity="0.5" fill="" points="
+                            713,556
+                            812,507
+                            864,541
+                            861,563
+                            759,616
+                            713,576
+                        "></polyline>
+                    </g>
+                    <!-- /floor 5 -->
+
+                    <!-- /section 1Б/1В -->
+
+                    <!-- section 1А -->
+
+                    <!-- floor 1 -->
+                    <g class="el-plan-g_flat j-flat">
+                        <polyline opacity="0.5" fill="" points="
+                            769,507
+                            785,521
+                            775,526
+                            768,522
+                        "></polyline>
+                        <polyline opacity="0.5" fill="" points="
+                            860,597
+                            919,565
+                            925,567
+                            952,553
+                            949,566
+                            923,579
+                            916,579
+                            858,610
+                            853,605
+                            860,600
+                        "></polyline>
+                    </g>
+                    <!-- /floor 1 -->
+
+                    <!-- floor 2 -->
+                    <g class="el-plan-g_flat j-flat">
+                        <polyline opacity="0.5" fill="" points="
+                            771,494
+                            796,515
+                            785,521
+                            769,507
+                        "></polyline>
+                        <polyline opacity="0.5" fill="" points="
+                            862,583
+                            921,552
+                            928,552
+                            955,540
+                            952,553
+                            925,567
+                            919,565
+                            860,597
+                        "></polyline>
+                    </g>
+                    <!-- /floor 2 -->
+
+                    <!-- floor 3 -->
+                    <g class="el-plan-g_flat j-flat">
+                        <polyline opacity="0.5" fill="" points="
+                            772,482
+                            807,510
+                            796,515
+                            771,494
+                        "></polyline>
+                        <polyline opacity="0.5" fill="" points="
+                            864,571
+                            923,540
+                            932,540
+                            958,528
+                            955,540
+                            928,552
+                            921,552
+                            862,583
+                        "></polyline>
+                    </g>
+                    <!-- /floor 3 -->
+
+                    <!-- floor 4 -->
+                    <g class="el-plan-g_flat j-flat">
+                        <polyline opacity="0.5" fill="" points="
+                            773,470
+                            817,504
+                            807,510
+                            772,482
+                        "></polyline>
+                        <polyline opacity="0.5" fill="" points="
+                            865,560
+                            925,529
+                            933,529
+                            961,517
+                            958,528
+                            932,540
+                            923,540
+                            864,571
+                        "></polyline>
+                    </g>
+                    <!-- /floor 4 -->
+
+                    <!-- floor 5 -->
+                    <g class="el-plan-g_flat j-flat">
+                        <polyline opacity="0.5" fill="" points="
+                            774,457
+                            816,490
+                            824,487
+                            920,512
+                            929,507
+                            927,516
+                            936,516
+                            964,505
+                            961,517
+                            933,529
+                            925,529
+                            865,560
+                            862,559
+                            864,541
+                            812,507
+                            817,504
+                            773,470
+                        "></polyline>
+                    </g>
+                    <!-- /floor 5 -->
+
+                    <!-- floor 6 -->
+                    <g class="el-plan-g_flat j-flat">
+                        <polyline opacity="0.5" fill="" points="
+                            776,444
+                            817,476
+                            827,472
+                            933,501
+                            939,501
+                            967,489
+                            964,505
+                            936,516
+                            927,516
+                            929,507
+                            920,512
+                            824,487
+                            816,490
+                            774,457
+                        "></polyline>
+                    </g>
+                    <!-- /floor 6 -->
+
+                    <!-- floor 7 -->
+                    <g class="el-plan-g_flat j-flat">
+                        <polyline opacity="0.5" fill="" points="
+                            777,431
+                            819,464
+                            828,460
+                            936,489
+                            942,489
+                            970,477
+                            967,489
+                            939,501
+                            933,501
+                            827,472
+                            817,476
+                            776,444
+                        "></polyline>
+                    </g>
+                    <!-- /floor 7 -->
+
+                    <!-- floor 8 -->
+                    <g class="el-plan-g_flat j-flat">
+                        <polyline opacity="0.5" fill="" points="
+                            778,418
+                            821,451
+                            830,447
+                            940,476
+                            945,476
+                            973,464
+                            970,477
+                            942,489
+                            936,489
+                            828,460
+                            819,464
+                            777,431
+                        "></polyline>
+                    </g>
+                    <!-- /floor 8 -->
+
+                    <!-- floor 9 -->
+                    <g class="el-plan-g_flat j-flat">
+                        <polyline opacity="0.5" fill="" points="
+                            779,405
+                            823,439
+                            833,435
+                            943,463
+                            948,463
+                            977,449
+
+                            973,464
+                            945,476
+                            940,476
+                            830,447
+                            821,451
+                            778,418
+                        "></polyline>
+                    </g>
+                    <!-- /floor 9 -->
+
+                    <!-- floor 10 -->
+                    <g class="el-plan-g_flat j-flat">
+                        <polyline opacity="0.5" fill="" points="
+                            781,392
+                            824,425
+                            834,421
+                            946,450
+                            951,450
+                            980,436
+
+                            977,449
+                            948,463
+                            943,463
+                            833,435
+                            823,439
+                            779,405
+                        "></polyline>
+                    </g>
+                    <!-- /floor 10 -->
+
+                    <!-- floor 11 -->
+                    <g class="el-plan-g_flat j-flat">
+                        <polyline opacity="0.5" fill="" points="
+                            782,378
+                            826,411
+                            835,408
+                            948,435
+                            955,435
+                            983,423
+
+                            980,436
+                            951,450
+                            946,450
+                            834,421
+                            824,425
+                            781,392
+                        "></polyline>
+                    </g>
+                    <!-- /floor 11 -->
+
+                    <!-- floor 12 -->
+                    <g class="el-plan-g_flat j-flat">
+                        <polyline opacity="0.5" fill="" points="
+                            784,364
+                            828,396
+                            836,393
+                            951,420
+                            957,420
+                            987,405
+
+                            983,423
+                            955,435
+                            948,435
+                            835,408
+                            826,411
+                            782,378
+                        "></polyline>
+                    </g>
+                    <!-- /floor 12 -->
+
+                    <!-- floor 13 -->
+                    <g class="el-plan-g_flat j-flat">
+                        <polyline opacity="0.5" fill="" points="
+                            785,349
+                            831,382
+                            839,378
+                            954,406
+                            961,406
+                            990,392
+
+                            987,405
+                            957,420
+                            951,420
+                            836,393
+                            828,396
+                            784,364
+                        "></polyline>
+                    </g>
+                    <!-- /floor 13 -->
+
+                    <!-- floor 14 -->
+                    <g class="el-plan-g_flat j-flat">
+                        <polyline opacity="0.5" fill="" points="
+                            786,334
+                            833,367
+                            841,363
+                            957,391
+                            965,391
+                            994,377
+
+                            990,392
+                            961,406
+                            954,406
+                            839,378
+                            831,382
+                            785,349
+                        "></polyline>
+                    </g>
+                    <!-- /floor 14 -->
+
+                    <!-- floor 15 -->
+                    <g class="el-plan-g_flat j-flat">
+                        <polyline opacity="0.5" fill="" points="
+                            788,320
+                            834,353
+                            843,349
+                            960,377
+                            968,377
+                            997,364
+
+                            994,377
+                            965,391
+                            957,391
+                            841,363
+                            833,367
+                            786,334
+                        "></polyline>
+                    </g>
+                    <!-- /floor 15 -->
+
+                    <!-- floor 16 -->
+                    <g class="el-plan-g_flat j-flat">
+                        <polyline opacity="0.5" fill="" points="
+                            789,304
+                            833,335
+                            832,340
+                            960,369
+                            1000,351
+
+                            997,364
+                            968,377
+                            960,377
+                            843,349
+                            834,353
+                            788,320
+                        "></polyline>
+                    </g>
+                    <!-- /floor 16 -->
+
+                    <!-- floor 17 -->
+                    <g class="el-plan-g_flat j-flat">
+                        <polyline opacity="0.5" fill="" points="
+                            791,287
+                            835,320
+                            965,349
+                            1005,330
+
+                            1000,351
+                            960,369
+                            832,340
+                            833,335
+                            789,304
+                        "></polyline>
+                    </g>
+                    <!-- /floor 17 -->
+
+                    <!-- floor 18 -->
+                    <g class="el-plan-g_flat j-flat">
+                        <polyline opacity="0.5" fill="" points="
+                            792,271
+                            837,304
+                            968,333
+                            1009,314
+
+                            1005,330
+                            965,349
+                            835,320
+                            791,287
+                        "></polyline>
+                    </g>
+                    <!-- /floor 18 -->
+
+                    <!-- floor 19 -->
+                    <g class="el-plan-g_flat j-flat">
+                        <polyline opacity="0.5" fill="" points="
+                            794,255
+                            839,286
+                            839,287
+                            972,317
+                            1013,298
+
+                            1009,314
+                            968,333
+                            837,304
+                            792,271
+                        "></polyline>
+                    </g>
+                    <!-- /floor 19 -->
+
+                    <!-- floor 20 -->
+                    <g class="el-plan-g_flat j-flat">
+                        <polyline opacity="0.5" fill="" points="
+                            796,239
+                            841,270
+                            841,271
+                            976,301
+                            1017,281
+
+                            1013,298
+                            972,317
+                            839,287
+                            839,286
+                            794,255
+                        "></polyline>
+                    </g>
+                    <!-- /floor 20 -->
+
+                    <!-- floor 21 -->
+                    <g class="el-plan-g_flat j-flat">
+                        <polyline opacity="0.5" fill="" points="
+                            797,221
+                            844,254
+                            979,283
+                            1021,264
+
+                            1017,281
+                            976,301
+                            841,271
+                            841,270
+                            796,239
+                        "></polyline>
+                    </g>
+                    <!-- /floor 21 -->
+
+                    <!-- floor 22 -->
+                    <g class="el-plan-g_flat j-flat">
+                        <polyline opacity="0.5" fill="" points="
+                            799,204
+                            846,237
+                            983,265
+                            1025,246
+
+                            1021,264
+                            979,283
+                            844,254
+                            797,221
+                        "></polyline>
+                    </g>
+                    <!-- /floor 22 -->
+
+                    <!-- floor 23 -->
+                    <g class="el-plan-g_flat j-flat">
+                        <polyline opacity="0.5" fill="" points="
+                            801,187
+                            848,218
+                            987,247
+                            1030,227
+
+                            1025,246
+                            983,265
+                            846,237
+                            799,204
+                        "></polyline>
+                    </g>
+                    <!-- /floor 23 -->
+
+                    <!-- floor 24 -->
+                    <g class="el-plan-g_flat j-flat">
+                        <polyline opacity="0.5" fill="" points="
+                            802,169
+                            850,200
+                            991,229
+                            1034,210
+
+                            1030,227
+                            987,247
+                            848,218
+                            801,187
+                        "></polyline>
+                    </g>
+                    <!-- /floor 24 -->
+
+                    <!-- floor 25 -->
+                    <g class="el-plan-g_flat j-flat">
+                        <polyline opacity="0.5" fill="" points="
+                            804,149
+                            852,180
+                            852,183
+                            995,211
+                            1038,192
+
+                            1034,210
+                            991,229
+                            850,200
+                            802,169
+                        "></polyline>
+                    </g>
+                    <!-- /floor 25 -->
+
+                    <!-- /section 1А -->
+                </g>
+         </svg>
+
+        </div>
+
+        <!--
+            <g class="el-plan-g_flat j-flat">
+                <polyline opacity="0.5" fill="" points="
+
+                "></polyline>
+            </g>
+        -->
+
+        <!--
+
+            viewBox="0 0 971.3844604 429.8955994"
+
+            257.8844604,177.1006012
+            333.8644104,177.8806152
+            333.2944946,278.7207336
+            333.2513428,285.180542
+            334.6844788,285.1006165
+            334.6844788,304.8554993
+            330.8644104,304.8554993
+            330.8778076,309.4154968
+            286.8244019,309.5354919
+            257.8010864,309.4154968
+            257.7644653,285.2206726
+        -->
+    </body>
+</html>

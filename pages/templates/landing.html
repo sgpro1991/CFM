@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>ЖК Стрелки</title>
+
+        <meta charset="utf-8">
+        <meta name="viewport" content="initial-scale=1, width=device-width, maximum-scale=1, minimum-scale=1, user-scalable=no">
+
+        <link rel="image_src" href="/images/notify_better_image.png" />
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,700' rel='stylesheet' type='text/css'>
+        <link href='http://fonts.googleapis.com/css?family=Pacifico:400' rel='stylesheet' type='text/css'>
+
+        <!-- css -->
+        <link rel='stylesheet' type='text/css' href='/static/len/css/onepage-scroll.css?2017011101'>
+        <link rel="stylesheet" type="text/css" href="/static/len/css/normalize.css?2017011101" />
+        <link rel="stylesheet" type="text/css" href="/static/len/css/demo.css?2017011101" />
+        <link rel="stylesheet" type="text/css" href="/static/len/css/component.css?2017012902" />
+        <link rel="stylesheet" type="text/css" href="/static/len/css/main.css?2017012802" />
+        <link rel="stylesheet" type="text/css" href="/static/len/css/linkstyles.css?2017011101" />
+        <link rel="stylesheet" type="text/css" href="/static/len/css/bootstrap.css?2017011101" />
+        <link rel="stylesheet" type="text/css" href="/static/len/css/material-design-iconic-font.min.css?2017011101"/>
+
+        <style>
+
+            body {
+                font-family: -apple-system,BlinkMacSystemFont,Roboto,Open Sans,Helvetica Neue,sans-serif;
+            }
+            li a {
+                color: white;
+            }
+
+            li p {
+                margin: 0;
+            }
+
+            header {
+                position: fixed;
+            }
+
+        </style>
+
+        <!-- /css -->
+
+        <!-- javascript -->
+        <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.0.js"></script>
+        <script type="text/javascript" src="/static/len/js/onepage-scroll.js"></script>
+        <script type="text/javascript" src="/static/len/js/jquery.maskedinput.min.js"></script>
+        <script type="text/javascript" src=" noty/packaged/jquery.noty.packaged.js"></script>
+        <script type="text/javascript" src="/static/len/js/jquery.lazyload.min.js"></script>
+        <script type="text/javascript" src="/static/len/js/modernizr.custom.js"></script>
+        <script type="text/javascript" src="/static/len/js/menu.js"></script>
+        <script type="text/javascript" src="/static/len/js/jquery.cbpFWSlider.js"></script>
+
+
+        <script>
+            $(document).ready(function() {
+                $(".main").onepage_scroll({
+                    sectionContainer: "section",
+                    loop: false,
+                    responsiveFallback: false,
+                    updateURL: true
+                });
+
+                $('.color-8,.scroller').click(function(){
+                    $(".main").moveDown();
+                })
+
+                $('.send').click(function(){
+
+
+                    if($('#order_name').val()!='' && $('#order_phone').val()!=''){
+
+                    $.ajax({
+                      url:'/api/request_phonecall/',
+                      type:'POST',
+                      data:{
+                        name:$('#order_name').val(),
+                        phone:$('#order_phone').val(),
+                      },success:function(data){
+
+                        $('#order_phone').val('')
+                        $('#order_name').val('')
+                        noty({
+                        text: 'Ваша заявка принята',
+                        type        : 'success',
+                        layout      : 'topCenter',
+                        closeWith   : ['button', 'click'],
+                        theme       : 'relax',
+                        timeout: 2500,
+                        maxVisible  : 10
+                      });
+
+                      },error:function(data){
+
+                      }
+                    })
+
+                  }else{
+                    noty({
+                    text: 'Заполните поля',
+                    type        : 'error',
+                    layout      : 'topCenter',
+                    closeWith   : ['button', 'click'],
+                    theme       : 'relax',
+                    timeout: 2500,
+                    maxVisible  : 10
+                  });
+                  }
+
+
+                })
+
+                $('.phone').click(function(){
+                    var defaults = {
+                        sectionContainer: "section",
+                        easing: "ease",
+                        animationTime: 1000,
+                        pagination: true,
+                        updateURL: false,
+                        keyboard: true,
+                        beforeMove: null,
+                        afterMove: null,
+                        loop: true,
+                        responsiveFallback: false,
+                        direction : 'vertical'
+                    };
+                    $(".main").moveTo(5)
+                })
+
+            });
+        </script>
+
+        <script>
+            $( function() {
+                $( '#cbp-fwslider' ).cbpFWSlider();
+                $("section.lazy").lazyload();
+                $("#order_phone").mask("+7 (999) 999-99-99"); /* phone number helper */
+            } );
+        </script>
+        <!-- /javascript -->
+
+
+    </head>
+
+    <body>
+        <div id="fb-root"></div>
+
+        <div class="wrapper">
+
+            <a class="nav__item" data-index="5" href="#5" style="display: inline;">
+                <div class="phone">
+                    <a style="color: #fff;" href="tel:+73433784101"><i class="zmdi zmdi-phone zmdi-hc-lg" style="margin-right: 10px;"></i>+7 (343) 378-41-01</a>
+                </div>
+            </a>
+
+
+
+            <div class="main">
+
+
+                <section class="page home lazy" init="Главная" data-original="/static/len/images/section1.jpg">
+
+                    <div class="podlogka"></div>
+                    <!-- <img class="backimage" src="/static/len/images/section1.jpg" style="width:100%;height:100%"/> -->
+
+                    <div class="grid__item color-8">
+                        <a class="link link--manko" href="#">Стрелки<span>Жилой комплекс</span><span><button class="btn btn-default">Узнать больше</button></span></a>
+                    </div>
+
+                    <div class="scroller">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="80px" height="80px" viewBox="0 0 64 64">
+                        <path fill="#fff" d="M32,16c-4.971,0-9,4.029-9,9v14c0,4.971,4.029,9,9,9c4.971,0,9-4.029,9-9V25C41,20.029,36.971,16,32,16z M39,39c0,3.866-3.134,7-7,7s-7-3.134-7-7V25c0-3.866,3.134-7,7-7s7,3.134,7,7V39z M32,21c-0.552,0-1,0.448-1,1v5c0,0.553,0.448,1,1,1c0.553,0,1-0.447,1-1v-5C33,21.448,32.553,21,32,21z"/>
+                        </svg>
+                    </div>
+
+                </section>
+
+
+                <section class="page" init="О нас">
+
+                    <!-- <img class="backimage desktop-display" src="/static/len/images/section2.jpg" style="width:100%;height:100%"/> -->
+                    <div class="podlojka ">
+                        <h3 class="alp">В шаговой доступности</h3>
+
+
+                            <div class="row marketing">
+                                <div class="col-lg-12">
+                                    <ul class="list-group">
+                                    <!-- <a href="https://icons8.com">Icon pack by Icons8</a> -->
+
+                                        <li style="text-align: left;"  class="list-group-item">
+                                                <!-- <img style="position: absolute; left: 75px;" class="icon icons8-Bus" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAD1klEQVRoQ+1aXXLTMBDW2q+0tofkmXAC2hM0nID0Bu0J4AZNTkA5AeUEDSfAPUHDCQjPCWOHMsNQxt6u7Mh1bPlHsk0aJprpdKa1tPtpf7T6VsAKhuf9HoTG/RtEHNEnA8aAfrY1cM4AXBbC555zOJVpAbI//litLhDZeFtql8tF10Tr1HHAT3+XA7L0VpcM2NvoI2SfyBJTkxlzx3k22xYw7h0B+ztkLByTZV6Qflc9yzovBBJNgPtvEQY0XvedA1em/MK7GwIEH7txN5wjmucy2TGgPzMCY5loHqc3d8MiiTWQfeg51rsiCyx9n8B2GTM479n2S5l8oSO5/qTvWIn7bwBZeL4LACdl1uCLL/0V8t8925LGWBMXrFp76f0cMcBrSkI3fccmd4vHpkVqKlglrEsgnvfrKIDglpx/w2p6QDzf537aROHSuYjfe449KHbtvEdoAYmCnQVXUQZpexAIZOZZUaIpcm0tIG3rrrqezLUrgfDgQggvgMGRqsA2vkeGM0Bjkj7RlYGIDNGGQo3XQDgVYKRAZIebSKsL37/llsjm7MZKKSyw8FZjAHbBLdO37eN0jMTLxAcoyA43AaTLNKuAJXduCb0e18A5AXlMZVnFnzoQvuFCxz0QFddo+m2Zp+wt0nR3debvLbIr6fc/zVqSknxXLJLEG1XMICvJdwrIuuwvrX534WQXVtkD0TkPdOakKaoyly+1CLEqM2JVXlEZPX5uWRMdRZrM4fHLIHgfXeqILCSK6kzrqvtkLlaIK5NZA0GTKt8QI/T8qktUJbdMk93VmUvc1Veyhmuyw3Ga69UCoqNA13P2QLreYdX1tS0S90twSAwr/SDnh92uslgdWVpABJOS3bU0q6G6o0Xf15WlDERQMdQsIYbCHHEac12bTTn32yZNpCJLHUjCa202fYqo/SaWeeTQqmUpAykrGtsuKFVkKQMRJUq28dOJRdblUB1ZGkBiupIylU+05GkSIxBcUwazO4mRGrKUgXCfF1bJZS0qH6j11SpDX1dWNZD1tTfbG+QZhaxCnVzeX8QbsoabbkQ2CfLs3DqyIiCUSamrZUsvVqIZylIUfptKtrFWUpEjo1cQFn+VEY1MV5f3z8MvPCZo9y8Nw3CdgwOywPaHd3d3EobhkDyC2uY8PjfTdP7lw5qd377q5Rpk3b8YCD0aIEfkcfHP7yEyCOJuIp6X1AZS9Big7YMwq3TV+kX/lzyqiXvo2bceXGDSrK/ogzdxy+U6c6rKzwFJircSbdo8CGXpNz6Ei4dMvvQtSQSG4VnuQUDE6sFVV2eIUF1H/gPl1gw/OaBDRQAAAABJRU5ErkJggg==" width="50" height="50"> -->
+                                                <img style="position: absolute; left: 75px;" class="icon icons8-Bus" src="/static/len/images/icons/Bus-48.png" width="50" height="50">
+                                                <p class="p_style" style="position: relative;">Автобусная остановка</p>
+                                                </li>
+
+                                        <li style="text-align: left;"  class="list-group-item">
+                                                <!-- <img style="position: absolute; left: 75px;" class="icon icons8-Railway-Station" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAEdElEQVRoQ+1aUW7bRhCdIQ0BBVJJRJXvOidocoK4J6h7AqsnsG9g+gSRT1D5BHVOEPUEcU9Q5dsuSMkFAgghp2+XpETJorm7pJSg0H4ZlnZ33sy8t7szYtrheJjPzyhNQ72F54WDbvdmV9tx2wtHkfRTb34uIhdE3F9fX2JmHnlp9zoIOG5z79aARNHn48RbXJLIaQEAYP5k8sbKYKF0CBBvM+MlJuZbP+1cBcF30zYANQYSRf++TrzkHJYOlwYJvRfyRi+D7ydlI++jxxOm9IKYfln+n2nspz4i9OKuCSBnINooTi7h/ZMSgBufOmGdl3X0aBEC0NnKeJmI+Feb4E3BWQNZEZiPsyyRmRCPjqgzrgOwaZQC9IUWQybwibmXp93URRiMgOQEPssJXAD4xADgURcAmhFXr0/zoWSAfiwA5cJwY7L+s0CUx1JvUQDQCgQwf4HAo0HQ1SRuezxEc3ANkr0ClCtdB4CqhWErkJUCrQisFIjID11z2Baw4iBREq6UDitoYdiudGtAcgKfYwYkNB9CILA/clGVf2azyywdsSLOjx96vStbQFoVKVFKVxaGWwjDddmpGkhOYIQ0VyAQGH+PoUAA4Kbz99EM3iSo2mqIEFSpF9qCUd/PlQ5OkWFJGCYQhrG6MfB9HH8EaV/rxZcK1AWAagJrtfEWODsE50I+t8I6X/w36qOEk4/PAQDR72Dg5Cjt4Eypdp4Shi80vygrnZrLDzHUU4Pg30wIrMnI6bun148KM4V/9cmb1gFZm21li/yuU7cAMuj3aqU4A5FNxEl+g9N7XEV+29R6wgVTMHkgjIHoHOXF3zbR02DU2aBxM64s9fwoO8uXzqs6jhaBMAbyEM3GWjkQiUHQgzDsbpT2usZe2hFVwx5IHCMafKzI6yLFNrB1mmlxkOmg33/VMpBMFAouafXw5pcskMMn7w4bs3XixcI8Pkq7uNZnamnKXYeIrANB+EdINRyeLQ6hZSrtD0gcRyoSIt7PTa8t2Y0i/aAig1QK9huRXPZMZNskZpsR2GNE1lPNxFgT0haOOQCpSxHX0JtGynX95qp14Mj2GB0iYntpdPXYt8+RKFbVwh55PGxa010eiHjYDYK+LnLsT37/L1cU5TX13sC14hSFhZ9MU2jb91SJCded2/J7ZW8RaWK4ydwDENuT3cSrTb5ziIhLRFAoOEVpSFUmT0B6q7ZA3dy9RSQzRP7YTB+Th5bJ3L0BKSqURRm0qGOpYvfLoI8IVQ+TuXsDsm0j283L6ex6BWp8jb+P4jt1EKJQHaoqe1Z5p9AoIgZzbZ1iUaCLp6r5UtS1TPK8Krnq5i7rWiKfcPc6NnkiWwBZVhqXJZtyM8a2EfTcXJuqpnVqudR+XQ7Endd+9dW6XI1vqT9egI0eH98mCTpTRbdsV9X4YsM1MC4ur5uju2XehUmvpvxuMeZIef/tbbA6C2s+d2z3WXNk04z1po9Zt2sblKbrNALSdPM2nfIESMPE+OrTGSf0ZK0p/9VNcjAAv0b6D/VZuQFYVwHvAAAAAElFTkSuQmCC" width="50" height="50"> -->
+                                                <img style="position: absolute; left: 75px;" class="icon icons8-Railway-Station" src="/static/len/images/icons/Subway-50.png" width="50" height="50">
+                                                <p class="p_style" style="position: relative;">Станция метро "Уральская"</p>
+                                                </li>
+                                        <li style="text-align: left;"  class="list-group-item">
+                                                <!-- <img style="position: absolute; left: 75px;" class="icon icons8-Baby" src="data:image/png;base64,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" width="50" height="50"> -->
+                                                <img style="position: absolute; left: 75px;" class="icon icons8-Baby" src="/static/len/images/icons/Children Faces-48.png" width="50" height="50">
+                                                <p class="p_style desktop-display" style="position: relative;">Встроенный детский сад с&nbsp;площадками</p>
+                                                <p class="p_style mobile-display" style="position: relative;">Детский сад</p>
+                                                </li>
+                                        <li style="text-align: left;"  class="list-group-item">
+                                                <!-- <img  style="position: absolute; left: 75px;" class="icon icons8-Parking" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAACN0lEQVRoQ+2aUVLCMBCGdynDjDMOacbyLN4ATyDewCPgCdQTCCdAb1BP4HgDPYF4A3wGJyn6StdEfKiApo3TTsqEJ4YkzX777yZLGoQd+eCOcMBWkFmSjJHoDAC7boHSFBHjA8ZG63ZtgMxFcqPwLtwC+GkNEYw6nA2zv26CSCmUEmFAwTHn+xOXgIT46C1x+QxA0ygMjwwgCekOUciczJ+53G7fFkU8SCVR6BWpxM0FJvGKFHBWJV29IiY3z0QyRIRrU79sOwFN1Lo/hUYjjtrthyJjS1PEBmQdqknN87xVRCUgeaqBmXjvI1CXIB2oAvBkBUUyIHbEOUqTOs6AZA2di8UZIN1/wzyq+um0liDa6DeRXBLCWH8PqKVU2Zv+BeOkItpgIShc4kJV3KrmJrg64OymliDa6JmQj1/5QnAXcTaoPQgRPXV42K8viJTPCNhTitwqRS5rCbIzOZI9I6jtqvWWJNfqIGG42hPNia67VbL8BkHjz0TVhqRp2ksButnjJpXkL01gfWd2dtOuvLWd4CGA9iAPRGWK6OUzD4xaoaQ6qpk0oRWbdvL151USWnmKxjygtVx+i4J5RUwey/6x8qFl8lam3YeWyVk+tEwe+qXdh5bJcT60TB6qOrQs7bEeVlqOWFtkOdCDWDqutGFekdJca/ng/IoIKQGROX1hgOg14mE364uN9+z/fd9h6ehCw3Jd4dBP/IIBGihlDgvNUHZnpQQBxuv3UPS0Tl7TsPHHzoB8AsiXUlHcmL3fAAAAAElFTkSuQmCC" width="50" height="50"> -->
+                                                <img  style="position: absolute; left: 75px;" class="icon icons8-Parking" src="/static/len/images/icons/Parking-48.png" width="50" height="50">
+                                                <p class="p_style desktop-display" style="position: relative;">Подземный паркинг с автомойкой</p>
+                                                <p class="p_style mobile-display" style="position: relative;">Подземный паркинг</p>
+                                                </li>
+                                        <li style="text-align: left;"  class="list-group-item">
+                                                <!-- <img style="position: absolute; left: 75px;" class="icon icons8-Gas-Station" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAADTElEQVRoQ+2awXXaQBCGZxDHgKT34Jx0EFyB7Q5wBXEqMB0YVxBcQXAFIRWEVGDSge+QJwnnGGkyIywQYgWLJN5bOeYGzM7q29md/WdXCDkfz/vTCxvhDRD1AdDJsyv+O/mAOLEi6951382K+1m1RJWDhbe8BqSvZZ1rtyf83HHbY217heEOSBwJDB9jW4J7C6xxFSOW7TvuB0IeMLiR/yyyzsr0swOy8IIxO/8kEB3XHpQZJZ223N8ohiF44P6uddqobHZBfN+TNZGMkOeR87exvEUi7qSKtUI+IY6bUfvOddHfzADyO47jVggSkDjrOHYMuR6xoj3ktUtFfOFn+1z2LWhNBVS3W0VEMk4zEdJ1nGenikAahBNNnxPNNwKaNcm+1IXRANkGKwsSRzkbgdT3eCpDMEXEj8fAGAcioEVgjAQpAmMsyLEwRoMcA2M8SAIT4pL3NxEb6mxWC5B0psuDqR0IEf1SpebagVjUdlX7TO1ARDqp9pnDIJ4vBZBdVmYnimAtUYiCjuvEBVt2p1eph6zNFgzBnQbIi8yuQpukfewRjTogYjP3ni8Qox+cy54Oggh5CMshG3MRhHZpHo4ElwNjC9rDRBAWiUjyHEnbgyClH1zDwf8F4vlPPCPeEzUuu25rWtuIzL1giAi32Z29dlMrT9rXDiRPQCYazKjFzplxCo3GuNNuP+SXytsVJAL2xNYwkNXjHypx09MsATYLhE8cAaJhnJ1Yrncd50wnMsZFJNFRIQQzgYEDR6nxZv1SpxgVkc1Z2uZIaF9U0jrNSJD0SCdweVPM+PSrI1uMj4iutH8D0RCyhUxU0+htamVl8aFsUWjocxrti4gcNuSdyBu/j6zKWH8mxz68KV7x/eJENQbrKwg5Isoa6M7NU0fktxcMCOGL1OMW2Xy/uH3ps4pGwHed+EEUgLEgW1FhGFbFAyts/ZTfQ+v5HKJoJBByYNd1nZ7RICqVm54JAtEE+0KiZTTIOgHxvT9BNIjXjMj8eE00Rum7+VqA6KzH1wcy9/3HpGzUGYHT2dCE79uvjvW/jkiSdo91cAr7IpvxDkgRJ1XBlNnDXi9IVaNbxk+RWbGOCGsbedvgvMwDVNKW4Du/JcQvux33+QeVPchi0ghhJQAAAABJRU5ErkJggg==" width="50" height="50"> -->
+                                                <img style="position: absolute; left: 75px;" class="icon icons8-Gas-Station" src="/static/len/images/icons/Gas Station-50.png" width="50" height="50">
+                                                <p class="p_style" style="position: relative;">Автозаправочная станция</p>
+                                                </li>
+                                        <li style="text-align: left;"  class="list-group-item">
+                                                <!-- <img style="position: absolute; left: 75px;" class="icon icons8-Shop" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAACOUlEQVRoQ+1aXU7CQBCesT4K7UZ4Fm+gJwBP4BHEG8AJxBOoJxBv4A2AE8gN1Gcw24KJiaGOC9IEyra0pS1rs7yQsNud+eb75mcBhIK8sCA4QANRjUnNiPKMjG2HVHNS5k/FMtfUtCGtwgHxI1aFJS/QkRnRQDKmLjYjGfuz8/Gh0uL8q+bi9+vOVnI4wKAyYwxtz9Ra1RrxaQPxp0dEgyqzGqv+BFE635Pn2ojbfUSsEx1cVFmpHwDE6SDCDRA8VJjZUhHImDtdMSFeEcFtlZkdKRBvExK0j5l5ryKQD+60COFOBPtJBLsZwIictrzlE2YvSP5rOTK2bZHoWDPIOGfsaKgiI5x/nrnovgDQW8WyTuXSWs5ZsmaYZ0InUYCPkb+B8f8D4bYNiKa/RieJkEd52kxyTpaLE+4P+Doj3HkWpe0SCK8rrNxVMUfGfNIEpEd/r/MBWW4CGgIZ7XnD4dNp3XVdUa9x2SCpbxhGh5VKg9zXFok+6wlfLH+wo99HiN4XDCGebEwgea9J8jgYyNy5udPinQC7h1BeNMgZTFoIJOjdz5oXSH0f2ZDTnj6IfR8p5A0xrS8kVoMT50zZc4lyJI7RMMUpAySp3GS6Duv4YVPBTjkSxWgYExqIZBrXjGybfKO0Ey0tLS2hk6Qy0FXL9zvHtsucrlqFrFpRSm3cWSts7ImTr4E3xKQDntJAdmVC9nyU+S11RjSQkAjkxkgWLKR5ZuQbYppGszhrK5AsjOZxZmH+VPMLcgOBYPtUgAkAAAAASUVORK5CYII=" width="50" height="50"> -->
+                                                <img style="position: absolute; left: 75px;" class="icon icons8-Shop" src="/static/len/images/icons/Shop-50.png" width="50" height="50">
+                                                <p class="p_style" style="position: relative;">ТРЦ "Карнавал"</p>
+                                                </li>
+                                        <li style="text-align: left;" class="list-group-item">
+                                                <!-- <img style="position: absolute; left: 75px;" class="icon icons8-City-Bench" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAABXklEQVRoQ+1YwQ3DIAyECZJKGaQbdIV202SDbtBBUql0AioeRISEYCxTAnJffeDDdzaHgxSN/GQjPAQTOVsluSJckUwKcGtlEhYNG6zIW321RR36rmjlILm0R2RW6iWFvKJrWyRQj0PfP8zWS0Xc8hXJCbmpbfsNkdLnAcrHCh8kAgU6y7oNkfmjnlLK21kSBOWhxTRcuvvqjPiBEMsDbUawCJIL2y+B0AQQbL8EIhJBsP0SCUkLw/ZLqycYLeke4ekXrGuehTz95tEVj8rTL147fGSSa1U/xtdpu77sepS1Pjr4VBYitTw6hI4AE8F7EG2kPRrtnJEqn4E2piWm3ZdG9zMy9J+2QdZokP2jn7rGvSBATASgAERIrojfcgBh0Uu4Ika6mAquvLnHmb3578iETG5R+93cM85bErp3IoGhPY+ugiiRXMlicJOI/LOFUsmEWm7VWiVaKJXIUY4/6V3WNc/nhD0AAAAASUVORK5CYII=" width="50" height="50"> -->
+                                                <img style="position: absolute; left: 75px;" class="icon icons8-Shop" src="/static/len/images/icons/City Bench-50.png" width="50" height="50">
+                                                <p class="p_style desktop-display" style="position: relative;">Городской пруд, центр города</p>
+                                                <p class="p_style mobile-display" style="position: relative;">Центр города</p>
+                                        </li>
+                                        <li style="text-align: left;" class="list-group-item">
+                                                <!-- <img style="position: absolute; left: 75px;" class="icon icons8-Vegetarian-Food" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAFlklEQVRoQ+1a3W3bSBCeJXUxDjhLJCI/R6nATgV2KohTgZ0KIldwcgUnVxC7gtgVWKkgugpOfrYCknaAAIbEudldDrWiKGmX1EF6OAIBAns5nG/+51sL2OLzGD2fCDH9AiA6bmrgCNH/dBDuD/g94SZgs6fHcfyPOwjWAUftIHi7I0ASlIq0g5aTQcfx4ntOAjbrD4AyhWy+8T8QGytVOTOO4hiEaFV5FxCTdhgEu5Ej0dM5QNp3BoP4gOCf70zVktakynVPlesEEG7aYYuALX/GUXILAj6Und1qsus+kt7LMPGh1QlDEa8CEkW/OlPxQiUbwMdXb8Pw99FuhFbmDUS4PAhbPZtcIa9ck1fOil7Zmkdy61p6g0HOvIKxjy3yivbi1oCQZSnJ4bNNbhQ99RjFAyHEMaD41A6b19sFko0nPvrvwvCPoU1Y8ZmxrHYCvyDg8CAI3m0NSBT9PJqK6XdK8gfqBR0XEDMwugdx0m8ltIywuqKS260GRCe9QLh4Hbb6GwESRRhMRSIn2cCM22UK8tRbJayM8Dql8PqKiN8OwuDECohUdFWNf4ySnhDwJwu16gWFEcPVK9p4T5HuKc3QCohqXF565nveNUwaD2Yjyrqz2iuKTapMOU5UqlZ3FFanrgDM81S9hlS9DikKPloBUcpG8YiS6w0LkhUD0L9oQGMkuy1740eSSM+cq3NCDBR4esL9/W9aznxs1wPCkQCXDkB0ySt+WCYbCviLLHyFAo8FiKMF5Yw5SnmEBkUf9o6KnnUFRbLyPFkJRMWh//zBn+7fyRyRXXUCL6QIyuTqmB5aqoTq3PWVLpOfl3HAUSkQBcB7klZWIcIlTv4/Iww+00/n45sU1uM4xrS/jgR6VwhixKP2Yxx/p48F4Hm9drN542r9Zed5W1wAkin6VZVS+VBY+NDsao9kjcyUSk1NekbmSNFLVMl6r1utS22ALDGVSBw2cO9j3dBSOZft73NA8oqiAdz58IoA6FFZemkikvu5HCCQlBeH/DPZF6YwGcwtSsY8lOVHT4ekHPoa713Hk6JnFoBoa0/kkhOYoZTlyTGmaa8IQi5CLEhhR+99A0Q8gUlfDXX8GMmuDAKJHPoOzVmpaqgtANExLI7KdoNZkvPnvAHHvgnE7OoyRD1Ij1LwhuZKyt6dQjLUIWm/i5SBnQOST5OIf1O7XyyfK8w1F/sOSuXbIYUYEW3hRjzCs48MjaL11n1gptB8dVv33lwBoM5Me8WtzTtLc4QrEVUdZ2+w0KpNjmc02UwrT8FctTYhTMf9LyIPZmSAjXXZmzbD5jJ5eY7w2lglrGyUXXVmNsFWz5McyCZ2gzqAqvK/eVhzaNUVVAeEfLfu9w2PVKP26wLgvGLCzfVqYac8YjCN1UmIWdXSHNE2kv0/qVpyXazalKqG2Y8o6fJSVruPGMLWsuFVFV72Hs93dYyYJ7vJpdaZeVxBFlmQdUz82oZYmHlyLtVVMdfzRiTUYlNKp1+97MwYblflbM+bhF7dIrO4j+QMd/UBzhaIC6G3TmYJkOz2SL5prKfrBLn+3hz763rDnAxW7OybL8fmOl13M1zo7EWL5ldb9AtiQbrEgly5Wr3s/Bw7Y3HxafNN806xlNfKaX8lDW993Ltw3TVMRTSNCj0tbv3trQ0IecasfEuZRt76mHSjMabvpc0r23ovK1PqPZ3R0kT3H6IjP8zsjDYUnpHMHsm8sZXJAGeyoa9sQyv6GsqUroPhhXgoukXNHknheEJce543BCK6mJeSbobG5E2apsTE4Akdp3+a5JNrNJHd53w2t6St6Vec41yzIrFVfEPaVZf1Do9cYen2oldGaFSVmX+eCEQEr8+yrYCYLp3CM1kaT8kzMlwCdT+hzU5/VkGcL/G95ImBD78N6uSVg73U0X8BMUMAonOFFMQAAAAASUVORK5CYII=" width="50" height="50"> -->
+                                                <img style="position: absolute; left: 75px;" class="icon icons8-Vegetarian-Food" src="/static/len/images/icons/Vegetarian Food-50.png" width="50" height="50">
+                                                <p class="p_style desktop-display" style="position: relative;">Продуктовые магазины (Магнит, Верный, К&Б)</p>
+                                                <p class="p_style mobile-display" style="position: relative;">Продуктовые магазины</p>
+                                        </li>
+                                        <li style="text-align: left;" class="list-group-item">
+                                                <!-- <img style="position: absolute; left: 75px;" class="icon icons8-Hospital" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAABB0lEQVRoQ+2a3Q3CMAyE7S7QPjAgI8AkMGilpAxQU5ACEk85S7EScX2r5CS+75y/qrqmx1l0v4noIkM+lsWmq645p3FFFPKWDyGbvV5Py6wjGlLyp5Be3KMjvThR8qAjdKQRAZZWI7DubkMcKYOULFucHigEqQE6AtBiaQGwhKUF0GJpAbBYWh5YTa+6XU/23+QQekhs7XHGPdkpBLED+DxFRxCwXU92CgHq3gPrf/cRDy1edSuouZffir4/IVy1AFp0BIDF+4gHVtN9BEnIGxsyR7zJIe0oBKEVEUtHIigjY9ARhFZELB2JoIyM8XUk5SyqM9K4u1izTd8/nsl+H1bMIUJkujwBgI7ruuSctg0AAAAASUVORK5CYII=" width="50" height="50"> -->
+                                                <img style="position: absolute; left: 75px;" class="icon icons8-Hospital" src="/static/len/images/icons/Nurse Female-50.png" width="50" height="50">
+                                                <p class="p_style" style="position: relative;">Больница и поликлиника</p>
+                                        </li>
+                                        <li style="text-align: left;" class="list-group-item">
+                                                <!-- <img style="position: absolute; left: 75px;" class="icon icons8-University" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAACtElEQVRoQ+1Z7W3bMBC9k4MABVpJBJTf9QjJBE0nqDeIN6g7QZwJqm7gbOBMUHeCdoTktwVQVgsUCCpdT5KlSI5sS9QHmoL+Z4C8u0e+90gdEXr6SUl2ZARXRDSLUyCia0TmrRDo95ESuw4q5e9xaDxeA9GEy7fL8clnRMtRdHojxKv7LnN3BsQLgg8QRbz6eJkVyLvxDcFw4/8E0Yx35d1T8bQCw3Ad07zrAlArIGX64DgpiGjDYJYjOJ3vrnqyW/A450ET3hkrBUD3XdBOCUglfYgeEFgHYC6O6SBZAAimBKwfxLdbQK1o1wjIIfo4wlyqUMSTwaQL2h0F0pQ+KmDiOW1ptxdIW/qoA1Kj3TMgfdBHFVQT2iVAKumTeuZtlfuoFqY6T8pf5yGEbAxwVbDvktvherP5jETT/PBi9yHAxQmY7jH3US1MdV684H8gmCFwvQW3I8QFev6GUvtPDq8Fu89CNdGQ85h2bN/RNDtkcyBDFtFHLlxLf1W+OvSRpueYBHe5a3nSj09Wa0SjCyFe/+g5davwifgx/M56eHCEPY6DFYBsXP73sVWGoScTfHGElX4mZLljRwghmLPsY0fYXuiGrqxmvvRiysaUgigBKYbInMyxrQTo7n/VsVWxuopdeUXRQI7snt6RGhTX1MoE30RPmlqaWtsbsT5HWAzZIuye1U001WSsdi3tWj3pT1NLU0tT6/B3kdaI1ojWiNbI08Wvq07HoB9WaXce8n5RzU7ToMMIwT2zrE/FpCX79eQL6jYWuozPGnSe78v4nYTIeH8m3qwGXeaaydby5yVi9JU7or5j26Ky03hICzXzDDKsqk5MXoGM4Lr0ajVIOV0kIT9+rTqJzBt8UbrYh531wi9W/74u9tVf1Ev+9LavWdAFAfqMkenl/3lDzBD1uWpDxP4L4tpRR5x1qzkAAAAASUVORK5CYII=" width="50" height="50"> -->
+                                                <img style="position: absolute; left: 75px;" class="icon icons8-University" src="/static/len/images/icons/University-50.png" width="50" height="50">
+                                                <p class="p_style" style="position: relative;">Университет</p>
+                                        </li>
+
+                                    </ul>
+                                </div>
+
+                            </div>
+                            <form action="/buildings" method="get">
+                                <button style="padding:15px;" class="btn btn-default ">Посмотреть комплекс</button>
+                            </form>
+
+                    </div>
+
+                </section>
+
+
+                <section class="page" init="Галерея">
+                    <div class="podlojka section" style="opacity:0.8">
+                        <h3 class="alp">Заказать звонок</h3>
+                        <ul class="list-group">
+                            <li class="list-group-item"><input type="text" class="main_form" id="order_name" placeholder="Представьтесь"/></li>
+                            <li class="list-group-item"><input type="tel" class="main_form" id="order_phone" placeholder="Телефон"/></li>
+                            <li class="list-group-item" style="padding:0">
+                                <button class="btn btn-default send" style="width: 100%;margin: 0;padding: 15px;border-radius: 0;border: none;">Отправить</button>
+                            </li>
+                        </ul>
+                    </div>
+                    <video src="/static/len/images/section3.mp4" autoplay style="height: 170%;position: absolute;top: 0;z-index:0; left: 0;" loop/>
+
+                </section>
+
+
+                <section class="page two" init="Документы">
+                    <!-- <div style="width:90%;position:relative;height:100%;padding:100px 0;"> -->
+                    <div style="position:relative;height:100%;padding:100px 0;margin:0 0;">
+                        <div id="cbp-fwslider" class="cbp-fwslider" style="height: 100%;">
+                            <ul>
+
+                                <li>
+                                    <a class="slider_a" href="/static/len/images/docs/bp1.jpg" target=_blank>
+                                        <img src="/static/len/images/docs/bp1_800x.jpg" alt="img01"/>
+                                        <span>Разрешение на строительство<br>(страница 1)</span>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a class="slider_a" href="/static/len/images/docs/bp2.jpg" target=_blank>
+                                        <img src="/static/len/images/docs/bp2_800x.jpg" alt="img03"/>
+                                        <span>Разрешение на строительство<br>(страница 2)</span>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a class="slider_a" href="/static/len/images/docs/bp3.jpg" target=_blank>
+                                        <img src="/static/len/images/docs/bp3_800x.jpg" alt="img04"/>
+                                        <span>Разрешение на строительство<br>(страница 3)</span>
+                                    </a>
+                                </li>
+
+                                <li>
+                                    <a class="slider_a" href="/static/len/images/docs/bp4.jpg" target=_blank>
+                                        <img src="/static/len/images/docs/bp4_800x.jpg" alt="img05"/>
+                                        <span>Разрешение на строительство<br>(страница 4)</span>
+                                    </a>
+                                </li>
+
+                            </ul>
+                        </div>
+                    </div>
+                </section>
+
+
+                <section class="page" init="Контакты">
+
+                    <div class="col-lg-6">
+
+                        <h3 class="alp desktop-display">Общество с ограниченной ответственностью «Башня Времени»</h3>
+                        <br>
+                        <p style="font-size: 17px; padding-left: 40px; padding-right: 40px;">ООО «Башня Времени» является инвестиционно-строительной компанией, занимается строительством жилых и&nbsp;нежилых зданий, арендой и&nbsp;управлением собственным или арендованным жилым недвижимым имуществом.</p>
+                        <p class="desktop-display" style="font-size: 17px; padding-left: 40px; padding-right: 40px;">Компания зарегистрирована 28&nbsp;ноября 2012&nbsp;года.</p>
+                        <br>
+
+                        <ul class="list-group">
+                            <li class="list-group-item">Телефон отдела продаж: +7&nbsp;(343)&nbsp;378-41-01</li>
+                            <li class="list-group-item">Адрес: г.&nbsp;Екатеринбург, ул.&nbsp;Малышева 51, БЦ Высоцкий, офис&nbsp;24/06&nbsp;(24/07)</li>
+                            <li style="margin: 40px 0 0;" class="list-group-item nomobile">Банки-партнеры</li>
+                            <li style="background:#fff;color:#666;" class="list-group-item desktop-display">
+                                <img class="img_bank" src="/static/len/images/banks/Sberbank.svg"/>
+                                <img class="img_bank" src="/static/len/images/banks/VTB24_Logo.svg"/>
+                                <img class="img_bank" src="/static/len/images/banks/binbank.png"/>
+                                <img class="img_bank" src="/static/len/images/banks/transcapital.png"/>
+                                <img class="img_bank" src="/static/len/images/banks/aizhk.png"/>
+                            </li>
+                        </ul>
+
+                    </div>
+
+                </section>
+
+            </div>
+
+        </div>
+
+
+        <!-- Код тега ремаркетинга Google -->
+        <!--------------------------------------------------
+        С помощью тега ремаркетинга запрещается собирать информацию, по которой можно идентифицировать личность пользователя. Также запрещается размещать тег на страницах с контентом деликатного характера. Подробнее об этих требованиях и о настройке тега читайте на странице http://google.com/ads/remarketingsetup.
+        --------------------------------------------------->
+        <script type="text/javascript">
+        /* <![CDATA[ */
+        var google_conversion_id = 859916233;
+        var google_custom_params = window.google_tag_params;
+        var google_remarketing_only = true;
+        /* ]]> */
+        </script>
+        <script type="text/javascript" src="//www.googleadservices.com/pagead/conversion.js">
+        </script>
+        <noscript>
+        <div style="display:inline;">
+        <img height="1" width="1" style="border-style:none;" alt="" src="//googleads.g.doubleclick.net/pagead/viewthroughconversion/859916233/?guid=ON&amp;script=0"/>
+        </div>
+        </noscript>
+        <!-- /Код тега ремаркетинга Google -->
+
+
+
+    </body>
+</html>

@@ -1,0 +1,104 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<br><br>
+<div class="row grid-row">
+  <div class="item">
+    <ul id="testimonials_ul">
+      {% for a in otz %}
+        <li class="item_li">
+            <div class="wpb_content_element">
+              <div class="testimonial testimonial-alt">
+                <p>{{a.text|safe}}</p>
+                <div class="author">{{a.name}}. {{a.date}}</div>
+              </div>
+            </div>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+<br>
+
+<button  onclick="about_news()" style="max-width:80%;margin-left:10%" class="btn-primary btn form-control">ЕЩЕ ОТЗЫВЫ</button>
+  <script>
+      function about_news(){
+
+        $.ajax({
+          url:'/about_tes/?limit='+$('.item_li').length,
+          type:'GET',
+          dataType:'json',
+          success:function(data){
+
+            if(data == ''){
+
+              $('.btn-primary').remove()
+              $('#testimonials_ul').append(`<li class="item_li">
+                                                <div class="wpb_content_element">
+                                                  <div class="testimonial testimonial-alt">
+                                                    <p></p>
+                                                    <div class="author">КОНЕЦ</div>
+                                                  </div>
+                                                </div>
+                                            </li>`)
+            }else{
+
+              data.map(function(a){
+                $('#testimonials_ul').append(`<li class="item_li">
+                                                  <div class="wpb_content_element">
+                                                    <div class="testimonial testimonial-alt">
+                                                      <p>${a.text}</p>
+                                                      <div class="author">${a.name}. ${a.date}</div>
+                                                    </div>
+                                                  </div>
+                                              </li>`)
+              })
+
+            }
+
+          }
+        })
+        
+      }
+  </script>
+<br>
+<br>
+<br>
+</div>
+
+<style>
+.row{
+  margin: 0 auto;
+}
+
+.item li{
+  margin: 40px auto;
+  background: #fff;
+}
+
+</style>
+
+<div class="grid-row">
+  <section class="widget widget-appointment">
+                <div class="widget-title">Оставьте отзыв</div>
+                <form action="/form/testimonials/" method="post" name="contactform">
+
+                  {% csrf_token %}
+                  <div class="row">
+                    <input type="text" name="name" placeholder="имя">
+                    <i class="fa fa-user"></i>
+                  </div>
+                  <div class="row">
+                    <input type="email" name="email" placeholder="электронная почта" required="">
+                    <i class="fa fa-envelope"></i>
+                  </div>
+                  <div class="row">
+                    <textarea cols="30" rows="10" name="message" placeholder="отзыв"></textarea>
+                    <i class="fa fa-align-left"></i>
+                  </div>
+                  <button type="submit" name="submit" class="button" value="Submit">Отправить</button>
+              </form>
+  </section>
+</div>
+
+
+{% endblock %}

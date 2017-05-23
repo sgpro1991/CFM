@@ -1,0 +1,90 @@
+{% extends 'base.html' %}
+{% block content %}
+<br>
+<div style="background:#fff;padding: 20px;margin: 0 auto 20px;max-width:1210px">
+<div class="grid-row">
+{{ flatpage.content }}
+
+
+<style>
+iframe{
+width:100% !important;
+}
+</style>
+
+<div class="widget-title">Связаться с Нами</div>
+
+<form action="/form/communication/" method="POST" name="contactform">
+
+	                  {% csrf_token %}
+								<fieldset>
+
+										<div class="clearfix">
+											<div class="input">
+												<label>Имя:</label>
+												<input type="text" name="nameOnline" required>
+											</div>
+
+											<div class="input">
+												<label>Город:</label>
+												<input type="text" name="cityOnline" required>
+											</div>
+
+											<div class="input">
+													<label>Электронная почта:</label>
+													<input type="email" name="emailOnline" required>
+											</div>
+	                  </div>
+
+										<div class="clearfix">
+												<div class="input">
+													<label>Номер телефона</label>
+													<input type="tel" name="phoneOnline" required>
+												</div>
+		                </div>
+
+										<label>Cообщение</label>
+
+										<textarea rows="6" name="messageOnline" required></textarea>
+										<button type="submit" class="button" value="Submit">Отправить</button>
+										<br>
+										<br>
+								</fieldset>
+</form>
+
+
+</div>
+</div>
+
+
+<script>
+$(document).ready(function(){
+
+
+			$(window).load(function(){
+
+
+  			$('.ui-state-default').each(function(){
+  				$(this).removeClass('ui-tabs-active');
+  			})
+
+
+  			var url = location.href;
+  			var init = url.match( /.$/ );
+
+  			var t = '#ui-id-'+init[0];
+
+  			$( ".wpb_tabs" ).tabs({
+  			  active: init,
+   			  activate: function( event, ui ) {
+
+  					location.hash=ui.newTab.index();
+  			  }
+  			});
+
+			     var a = $('#ui-id-5').parent().attr('class');
+			})
+	   })
+</script>
+
+{% endblock %}

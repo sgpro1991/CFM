@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% block content %}
+
+
+<main class="page-content">
+				<div class="grid-row">
+
+
+
+
+					</div>
+
+                <!-- Comment Form -->
+                <a class="anchor" name="comment"></a>
+                <div class="grid-row">
+                <br>
+                <br>
+
+                <section class="widget widget-appointment">
+                  <form action="/form/send-email-doc/" name="contactform" method="post">
+                      {% csrf_token %}
+                  								<input type="hidden" name="doc" value="{{email}}">
+                      							<div class="row">
+                      								<input type="text" name="name" placeholder="имя">
+                      								<i class="fa fa-user"></i>
+                      							</div>
+                      							<div class="row">
+                      								<input type="email" name="email" placeholder="электронная почта">
+                      								<i class="fa fa-envelope"></i>
+                      							</div>
+                      							<div class="row">
+                      								<textarea cols="30" rows="10" name="message" placeholder="сообщение"></textarea>
+                      								<i class="fa fa-align-left"></i>
+                      							</div>
+                      							  <button type="submit" name="submit" class="button" value="Submit">Отправить</button>
+                  </form>
+						</section>
+                    </div>
+
+                <!--/ Comment Form -->
+
+
+				</main>
+
+
+
+
+{% endblock %}

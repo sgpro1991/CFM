@@ -1,0 +1,66 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<br/>
+
+<main class="page-content">
+
+{% for a in faq %}
+<div class="grid-row">
+<section class="detailed-services wpb_content_element">
+<dl>
+	<dt class="closed"><em><em>{{a.question}}</em></em></dt>
+	<dd>
+	<div class="row grid-row" style="padding:20px;">
+    {{a.response|safe}}
+	</div>
+	</dd>
+</dl>
+</section>
+
+
+
+
+
+
+</div>
+{% endfor %}
+
+<br><br>
+<div class="grid-row">
+<section class="widget widget-appointment">
+							<div class="widget-title">У вас есть вопрос?</div>
+
+
+					<form action="/form/faq/" name="contactform" method="post">
+
+								      {% csrf_token %}
+
+								<div class="row">
+									<input type="text" name="nameOnline" placeholder="имя" required="">
+									<i class="fa fa-user"></i>
+								</div>
+								<div class="row">
+									<input type="text" name="cityOnline" placeholder="Город" required="">
+									<i class="fa fa-user"></i>
+								</div>
+								<div class="row">
+									<input type="email" name="emailOnline" placeholder="электронная почта" required="">
+									<i class="fa fa-envelope"></i>
+								</div>
+								<div class="row">
+									<textarea cols="30" rows="10" name="messageOnline" placeholder="вопрос" required=""></textarea>
+									<i class="fa fa-align-left"></i>
+								</div>
+
+
+								<button type="submit" name="submit" class="button" value="Submit">Отправить</button>
+
+							</form>
+
+</section>
+</div>
+
+</main>
+
+{% endblock %}

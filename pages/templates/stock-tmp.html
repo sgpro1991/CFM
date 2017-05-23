@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block content %}
+        <br>
+<main class="page-content vc_responsive">
+
+				<div class="grid-row">
+          <div style="background:#fff;padding: 20px;margin: 0 auto 20px;max-width:1210px">
+						<section>
+              <div class="news" style="height: auto;border: none;box-shadow: none;">
+              <div class="date">{{stock.title}}<span></span></div>
+              </div>
+              <br>
+
+                {{stock.text|safe}}
+
+                       <!--<script id="7BPsWZlZXeUfqGBg">if (window.relap) window.relap.ar('7BPsWZlZXeUfqGBg');</script>-->
+            </section>
+        </div>
+      </div>
+</main>
+{% endblock %}

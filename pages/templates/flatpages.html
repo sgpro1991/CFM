@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+{% block content %}
+<br>
+<div style="background:#fff;padding: 20px;margin: 0 auto 20px;max-width:1210px">
+<div class="grid-row">
+	<main class="page-content vc_responsive">
+
+
+	{{ flatpage.content }}
+
+</main>
+
+</div>
+</div>
+
+
+<style>
+iframe{
+	width:100% !important;
+	margin: 0 auto;
+	min-height: 500px !important;
+}
+</style>
+
+<script>
+$(document).ready(function(){
+
+
+			$(window).load(function(){
+
+
+  			$('.ui-state-default').each(function(){
+  				$(this).removeClass('ui-tabs-active');
+  			})
+
+
+  			var url = location.href;
+  			var init = url.match( /.$/ );
+
+  			var t = '#ui-id-'+init[0];
+
+  			$( ".wpb_tabs" ).tabs({
+  			  active: init,
+   			  activate: function( event, ui ) {
+
+  					location.hash=ui.newTab.index();
+  			  }
+  			});
+
+			     var a = $('#ui-id-5').parent().attr('class');
+			})
+	   })
+</script>
+
+{% endblock %}
